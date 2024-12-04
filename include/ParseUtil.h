@@ -78,7 +78,7 @@ namespace com_sakushira::cpp_lib {
 
         /**
          * @brief delimを基準に分割し、結果の配列を返す。
-         * @detalis 出力にdelimは含まれません。
+         * @details 出力にdelimは含まれません。
          * @details delimを基準に文字が存在するかを問わず配列化するため、以下のような入力になります。
          * @details delimは「,」とする。",a,,b,"を入力した場合{"", "a", "", "b", ""}となる。
          * @details strに空文字列を与えた場合、空文字列のみを含む配列を返します。
