@@ -14,6 +14,7 @@
 .idea/**/dbnavigator.xml
 .idea/**/gradle.xml
 .idea/**/libraries
+.idea/copyright/profiles_settings.xml
 cmake-build-*/
 .idea/**/mongoSettings.xml
 *.iws

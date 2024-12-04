@@ -1,11 +1,33 @@
 /**
- * @file
+ * @file ParseUtil.h
  * @date 24/12/03
- * @brief ファイルの説明
- * @details ファイルの詳細
  * @author saku shirakura (saku@sakushira.com)
+ * @since v0.0.1-alpha
  */
 
+/*
+MIT License
+
+Copyright (c) saku shirakura <saku@sakushira.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 
 #ifndef NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
 #define NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
@@ -18,6 +40,10 @@
 #include <numeric>
 
 namespace com_sakushira::cpp_lib {
+/**
+ * @brief ParseUtilで範囲外の値を指定した場合に送出される例外
+ * @since v0.0.1-alpha
+ * */
     class ParseUtilOutOfRange : std::out_of_range {
     public:
         explicit ParseUtilOutOfRange(const std::string &message) : std::out_of_range(message) {}
@@ -27,6 +53,7 @@ namespace com_sakushira::cpp_lib {
  * @brief パーサの実装に便利なユーティリティクラス
  * @details このクラスのメンバ関数はすべて静的関数です。
  * @details このクラスはインスタンス化できません。
+ * @since v0.0.1-alpha
  * */
     class ParseUtil {
     public:
@@ -41,6 +68,7 @@ namespace com_sakushira::cpp_lib {
          * @returns beg > end: beg以降のすべての要素からなる部分配列
          * @returns beg = end: end以前のすべての要素からなる部分配列
          * @throws ParseUtilOutOfRange begまたはendのいずれかがarrayの範囲を超過しています。
+         * @since v0.0.1-alpha
          */
 
         template<class T>
@@ -51,6 +79,7 @@ namespace com_sakushira::cpp_lib {
          * @param str 変換対象の文字列
          * @return vector<char>に変換されたstr
          * @details 入力文字列をaとしたとき、「toString(toArray(a)) == a」となります。
+         * @since v0.0.1-alpha
          * */
         [[maybe_unused]] static std::vector<char> toArray(std::string str);
 
@@ -59,6 +88,7 @@ namespace com_sakushira::cpp_lib {
          * @param array 変換対象の配列
          * @return stringに変換されたarray
          * @details 入力配列をaとしたとき、「toArray(toString(a)) == a」となります。
+         * @since v0.0.1-alpha
          * */
         [[maybe_unused]] static std::string toString(std::vector<char> array);
 
@@ -72,6 +102,7 @@ namespace com_sakushira::cpp_lib {
          * @returns beg > end: beg以降のすべての文字からなる部分文字列
          * @returns beg = end: end以前のすべての文字からなる部分文字列
          * @throws ParseUtilOutOfRange begまたはendのいずれかがstrの範囲を超過しています。
+         * @since v0.0.1-alpha
          */
 
         [[maybe_unused]] static std::string slice(std::string str, size_t beg, size_t end);
@@ -87,6 +118,7 @@ namespace com_sakushira::cpp_lib {
          * @param delim 分割の基準となる文字列
          * @returns delim.empty(): 1文字単位で分割され、文字列に変換された配列
          * @returns else: delimを基準に分割されたた文字列の配列
+         * @since v0.0.1-alpha
          */
         [[maybe_unused]] static std::vector<std::string> split(const std::string &str, const std::string &delim = " ");
 

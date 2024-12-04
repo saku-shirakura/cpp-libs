@@ -40,6 +40,10 @@ SOFTWARE.
 #include <cinttypes>
 
 namespace com_sakushira::cpp_lib {
+/**
+ * @brief 引数パーサのクラス
+ * @since v0.0.1-alpha
+ * */
     class ArgumentParser {
     public:
         ArgumentParser();
@@ -48,6 +52,7 @@ namespace com_sakushira::cpp_lib {
          * @param argc コマンドライン引数の数
          * @param argv char*型のコマンドライン引数の配列
          * @overload
+         * @since v0.0.1-alpha
          */
         void parse(int argc, char *argv[]);
 
@@ -59,6 +64,7 @@ namespace com_sakushira::cpp_lib {
          * @details パース後: std::map&lt;std::string, std::string&gt; named_arg{{&lt;name&gt;, &lt;value&gt;}}
          * @details 名前なし引数: &lt;value1&gt; &lt;value2&gt; &lt;value3&gt; ...
          * @details パース後: std::array&lt;std::string&gt; no-named_arg{ &lt;value1&gt;, &lt;value2&gt;, &lt;value3&gt;, ...}
+         * @since v0.0.1-alpha
          */
         void parse(const std::vector<std::string> &args_);
 
@@ -66,6 +72,7 @@ namespace com_sakushira::cpp_lib {
          * @brief 名前なし引数のリストを取得します。
          * @details 順番は、例えば`実行ファイル arg1 named=value arg2 arg3`と入力したならば、リストは、arg1, arg2, arg3とそのままの順番で返します。
          * @details 名前付き引数は別の関数で取得できます。詳しくは、get_named_argを参照してください。
+         * @since v0.0.1-alpha
          * */
         const std::vector<std::string> &get_args() const;
 
@@ -75,6 +82,7 @@ namespace com_sakushira::cpp_lib {
          * @param i 0以上の整数
          * @return 0から始まるリストのi番目の要素
          * @details i番目の要素が存在しない場合は、空文字列が返されます。
+         * @since v0.0.1-alpha
          */
         std::string get_arg(size_t i) const;
 
@@ -83,6 +91,7 @@ namespace com_sakushira::cpp_lib {
          * @param key 取得したい引数の名前
          * @return std::string 取得した引数の値
          * @details この関数では、存在しない引数名を指定した場合、空文字列を返します。
+         * @since v0.0.1-alpha
          */
         std::string get_named_arg(const std::string &key) const;
 
@@ -90,6 +99,7 @@ namespace com_sakushira::cpp_lib {
          * @brief 名前付き引数が存在するか確認します。
          * @param key 取得したい引数の名前
          * @return bool 名前付き引数が存在したかの結果
+         * @since v0.0.1-alpha
          */
         bool is_exist_named_arg(const std::string &key) const;
 
@@ -100,6 +110,7 @@ namespace com_sakushira::cpp_lib {
          * @return int64_t 名前付き引数の変換後の値
          * @details 名前付き引数を変換します。
          * @details 例外が捕捉された場合はdefault_valueを返します。
+         * @since v0.0.1-alpha
          * */
         int64_t get_named_arg_int64(const std::string &key, int64_t default_value) const noexcept;
 
@@ -110,6 +121,7 @@ namespace com_sakushira::cpp_lib {
          * @exception std::runtime_error 指定された引数の値は数値ではありませんでした。
          * @exception std::out_of_range 値は範囲外です。
          * @return int64_t 名前付き引数の変換後の値
+         * @since v0.0.1-alpha
          * */
         int64_t get_named_arg_int64(const std::string &key) const;
 
