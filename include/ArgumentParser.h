@@ -37,6 +37,7 @@ SOFTWARE.
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <cinttypes>
 
 namespace com_sakushira::cpp_lib {
     class ArgumentParser {
