@@ -3,4 +3,6 @@ project(cpp-libs)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(argument-parser STATIC src/command-parser/ArgumentParser.cpp src/command-parser/ArgumentParser.h)
+add_library(cpp-libs STATIC src/ArgumentParser.cpp)
+
+target_include_directories(cpp-libs PUBLIC include)
