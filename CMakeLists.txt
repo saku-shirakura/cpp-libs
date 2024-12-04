@@ -3,6 +3,6 @@ project(cpp-libs)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(cpp-libs STATIC src/ArgumentParser.cpp)
+add_library(cpp-libs STATIC src/ArgumentParser.cpp src/ParseUtil.cpp)
 
 target_include_directories(cpp-libs PUBLIC include)
