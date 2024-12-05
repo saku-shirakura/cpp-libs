@@ -142,3 +142,28 @@ TEST(ParseUtilSplit, boundary3) {
     ASSERT_NO_THROW(ParseUtil::split("test", ","));
     ASSERT_EQ(ParseUtil::split("test", ","), test);
 }
+
+TEST(ParseUtilAppendAll, eq1) {
+    std::vector<std::string> test{"test", "abc", "hello", "world", "say"};
+    ASSERT_EQ(ParseUtil::appendAll(test, ", at ,"), "test, at ,abc, at ,hello, at ,world, at ,say");
+}
+
+TEST(ParseUtilAppendAll, eq2) {
+    std::vector<std::string> test{"hello,", "world!"};
+    ASSERT_EQ(ParseUtil::appendAll(test), "hello,world!");
+}
+
+TEST(ParseUtilAppendAll, eq3) {
+    std::vector<std::string> test{"a5a", "","", "a5a"};
+    ASSERT_EQ(ParseUtil::appendAll(test, "f"), "a5afffa5a");
+}
+
+TEST(ParseUtilAppendAll, boundary1) {
+    std::vector<std::string> test{"hello,"};
+    ASSERT_EQ(ParseUtil::appendAll(test, "abc"), "hello,");
+}
+
+TEST(ParseUtilAppendAll, boundary2) {
+    std::vector<std::string> test{};
+    ASSERT_EQ(ParseUtil::appendAll(test, "abc"), "");
+}

@@ -59,4 +59,15 @@ namespace com_sakushira::cpp_lib {
             throw;
         }
     }
+
+    std::string ParseUtil::appendAll(const std::vector<std::string> &input, const std::string &glue) {
+        if (input.empty()) {
+            return "";
+        }
+        std::string str(input.front());
+        for (size_t i = 1; i < input.size(); i++) {
+            str += glue + input.at(i);
+        }
+        return str;
+    }
 }

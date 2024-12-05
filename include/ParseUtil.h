@@ -122,6 +122,17 @@ namespace com_sakushira::cpp_lib {
          */
         [[maybe_unused]] static std::vector<std::string> split(const std::string &str, const std::string &delim = " ");
 
+        /**
+         * @brief inputの値をすべて連結し、結果を返します。
+         * @param input 入力配列
+         * @param glue 連結時に要素間に挿入する文字列
+         * @return 連結した結果
+         * @since v0.0.2-alpha
+         */
+        [[maybe_unused]] static std::string appendAll(
+                const std::vector<std::string> &input,
+                const std::string &glue = ""
+        );
     };
 }
 
