@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "ArgumentParser.h"
+#include <com_sakushira_cpp_lib/ArgumentParser.h>
 #include <regex>
 
 void com_sakushira::cpp_lib::ArgumentParser::parse(const std::vector<std::string> &args_) {
