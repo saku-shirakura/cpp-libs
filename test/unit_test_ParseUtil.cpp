@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include <com_sakushira_cpp_lib/ParseUtil.h>
+#include <gtest/gtest.h>
 
 using namespace com_sakushira::cpp_lib;
 
@@ -143,6 +143,8 @@ TEST(ParseUtilSplit, boundary3) {
     ASSERT_EQ(ParseUtil::split("test", ","), test);
 }
 
+// appendAll
+
 TEST(ParseUtilAppendAll, eq1) {
     std::vector<std::string> test{"test", "abc", "hello", "world", "say"};
     ASSERT_EQ(ParseUtil::appendAll(test, ", at ,"), "test, at ,abc, at ,hello, at ,world, at ,say");
@@ -154,7 +156,7 @@ TEST(ParseUtilAppendAll, eq2) {
 }
 
 TEST(ParseUtilAppendAll, eq3) {
-    std::vector<std::string> test{"a5a", "","", "a5a"};
+    std::vector<std::string> test{"a5a", "", "", "a5a"};
     ASSERT_EQ(ParseUtil::appendAll(test, "f"), "a5afffa5a");
 }
 
@@ -166,4 +168,116 @@ TEST(ParseUtilAppendAll, boundary1) {
 TEST(ParseUtilAppendAll, boundary2) {
     std::vector<std::string> test{};
     ASSERT_EQ(ParseUtil::appendAll(test, "abc"), "");
+}
+
+// StringValidator::isValidSigned
+
+TEST(ParseUtilStringValidatorSigned, eq) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidSigned("123412341234"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidSigned("+123412341234"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidSigned("-123412341234"));
+}
+
+TEST(ParseUtilStringValidatorSigned, invalid) {
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidSigned("-123helpfw"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidSigned("+ 123  extender"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidSigned(""));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidSigned("hello"));
+}
+
+TEST(ParseUtilStringValidatorSigned, boundaryMax) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidSigned("9223372036854775807"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidSigned("9223372036854775808"));
+}
+
+TEST(ParseUtilStringValidatorSigned, boundary) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidSigned("0"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidSigned("-0"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidSigned("+0"));
+}
+
+TEST(ParseUtilStringValidatorSigned, boundaryMin) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidSigned("-9223372036854775808"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidSigned("-9223372036854775809"));
+}
+
+// StringValidator::isValidUnsigned
+
+TEST(ParseUtilStringValidatorUnsigned, eq) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidUnsigned("9223372036854775807"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidUnsigned("+9223372036854775807"));
+}
+
+TEST(ParseUtilStringValidatorUnsigned, invalid) {
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned("123helpfw"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned("+ 123  extender"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned(""));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned("hello"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned("-1256"));
+}
+
+TEST(ParseUtilStringValidatorUnsigned, boundaryMax) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidUnsigned("18446744073709551615"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned("18446744073709551616"));
+}
+
+TEST(ParseUtilStringValidatorUnsigned, boundary) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidUnsigned("0"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidUnsigned("+0"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned("-0"));
+}
+
+TEST(ParseUtilStringValidatorUnsigned, boundaryMin) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidUnsigned("0"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned("-1"));
+}
+
+// StringValidator::isValidDouble
+
+TEST(ParseUtilStringValidatorDouble, eq) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-1.623e150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("1.623e150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("+1.623e150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-1.623e-150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("1.623e-150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("+1.623"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-1.623"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("+123123"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-123123"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("123123"));
+}
+
+TEST(ParseUtilStringValidatorDouble, invalid) {
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("123helpfw"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("+ 123  extender"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble(""));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("hello"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("-1.623e-150.53"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("+.623e-150"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("1.e-150"));
+}
+
+TEST(ParseUtilStringValidatorDouble, boundary) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("0"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("+0"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-0"));
+}
+
+// StringValidator::isValidBoolean
+
+TEST(ParseUtilStringValidatorBoolean, eq) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidBoolean("true"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidBoolean("false"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidBoolean("fAlSe"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidBoolean("TrUE"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidBoolean("TRUE"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidBoolean("FALSE"));
+}
+
+TEST(ParseUtilStringValidatorBoolean, invalid) {
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidBoolean("tr e"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidBoolean(" false"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidBoolean("hello"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidBoolean("12345"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidBoolean(""));
 }

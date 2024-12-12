@@ -1,33 +1,31 @@
+// MIT License
+//
+// Copyright (c) 2024 Saku Shirakura <saku@sakushira.com>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
 /**
  * @file ParseUtil.h
  * @date 24/12/03
  * @author saku shirakura (saku@sakushira.com)
  * @since v0.0.1-alpha
  */
-
-/*
-MIT License
-
-Copyright (c) saku shirakura <saku@sakushira.com>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
 
 #ifndef NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
 #define NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
@@ -127,12 +125,74 @@ namespace com_sakushira::cpp_lib {
          * @param input 入力配列
          * @param glue 連結時に要素間に挿入する文字列
          * @return 連結した結果
-         * @since v0.0.2-alpha
+         * @since v0.1.0-alpha
          */
         [[maybe_unused]] static std::string appendAll(
                 const std::vector<std::string> &input,
                 const std::string &glue = ""
         );
+
+        /**
+         * @brief 文字列が、整数や真偽型に変換可能かどうかを判定します。
+         * @details このクラスのメンバ関数はすべて静的関数です。
+         * @details このクラスはインスタンス化できません。
+         * @since v0.1.0-alpha
+         * */
+        class StringValidator {
+        public:
+            StringValidator() = delete;
+
+            /**
+             * @brief 入力がlong long型に変換可能かを判定します。
+             * @param str_ 符号付き整数を表した文字列
+             * @return 判定結果
+             * @since v0.1.0-alpha
+             * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
+             */
+            [[maybe_unused]] static bool isValidSigned(const std::string &str_);
+
+            /**
+             * @brief 入力がunsigned long long型に変換可能かを判定します。
+             * @param str_ 符号なし整数を表した文字列
+             * @return 判定結果
+             * @since v0.1.0-alpha
+             * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
+             */
+            [[maybe_unused]] static bool isValidUnsigned(const std::string &str_);
+
+            /**
+             * @brief 入力がdouble型に変換可能かを判定します。
+             * @param str_ 倍精度浮動小数点数を表した文字列
+             * @return 判定結果
+             * @since v0.1.0-alpha
+             * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
+             */
+            [[maybe_unused]] static bool isValidDouble(const std::string &str_);
+
+            /**
+             * @brief 入力が真偽型を表現しているかを判定します。
+             * @param str_ 真偽を表した文字列(trueまたはfalse, 文字の大小は無視されます。[ignore case])
+             * @return 判定結果
+             * @since v0.1.0-alpha
+             * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
+             */
+            [[maybe_unused]] static bool isValidBoolean(const std::string &str_);
+
+        private:
+             /**
+              * @brief 判定器用のヘルパー関数
+              * @param str_ 判定対象の文字列
+              * @param _error_checker 変換不可の場合に例外を送出するか、それについての真偽型を返す関数。例外でエラーを示す場合は、return true;としてください。
+              * @return 判定結果
+              * @since v0.1.0-alpha
+              */
+            static bool _validateHelper(const std::string &str_, const std::function<bool(const std::string&)>& _error_checker) noexcept;
+
+            const static std::regex _signedPattern;
+            const static std::regex _unsignedPattern;
+            const static std::regex _doublePattern;
+            const static std::regex _booleanPattern;
+        };
     };
 }
 
