@@ -91,6 +91,16 @@ namespace com_sakushira::cpp_lib {
         });
     }
 
+    bool ParseUtil::StringValidator::isValidLongDouble(const std::string &str_) {
+        if(!std::regex_match(str_, _longDoublePattern)){
+            return false;
+        }
+        return _validateHelper(str_, [](const std::string &s_) {
+            std::stold(s_);
+            return true;
+        });
+    }
+
     bool ParseUtil::StringValidator::isValidDouble(const std::string &str_) {
         if(!std::regex_match(str_, _doublePattern)){
             return false;
@@ -116,6 +126,7 @@ namespace com_sakushira::cpp_lib {
 
     const std::regex ParseUtil::StringValidator::_signedPattern(R"([+\-]?(([1-9][0-9]{0,18})|0))");
     const std::regex ParseUtil::StringValidator::_unsignedPattern(R"(\+?(([1-9][0-9]{0,19})|0))");
+    const std::regex ParseUtil::StringValidator::_longDoublePattern(R"([+\-]?(([1-9][0-9]*)|(0))(\.[0-9]+)?(e[+-]?(([1-9][0-9]{0,3})|0))?)");
     const std::regex ParseUtil::StringValidator::_doublePattern(R"([+\-]?(([1-9][0-9]*)|(0))(\.[0-9]+)?(e[+-]?(([1-9][0-9]{0,2})|0))?)");
     const std::regex ParseUtil::StringValidator::_booleanPattern(R"((true)|(false))", std::regex::icase);
 }// namespace com_sakushira::cpp_lib

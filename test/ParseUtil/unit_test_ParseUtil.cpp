@@ -1,3 +1,25 @@
+// MIT License
+//
+// Copyright (c) 2024 Saku Shirakura <saku@sakushira.com>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
 #include <com_sakushira_cpp_lib/ParseUtil.h>
 #include <gtest/gtest.h>
 
@@ -16,12 +38,12 @@ TEST(ParseUtilToString, boundary) {
 // toArrayのテスト
 
 TEST(ParseUtilToArray, eq) {
-    std::vector<char> valid{'a', 'b', 'c', 'd', 'e', 'f', 'g'};
+    const std::vector<char> valid{'a', 'b', 'c', 'd', 'e', 'f', 'g'};
     ASSERT_EQ(ParseUtil::toArray("abcdefg"), valid);
 }
 
 TEST(ParseUtilToArray, boundary) {
-    std::vector<char> valid{};
+    constexpr std::vector<char> valid{};
     ASSERT_EQ(ParseUtil::toArray(""), valid);
 }
 
@@ -232,35 +254,35 @@ TEST(ParseUtilStringValidatorUnsigned, boundaryMin) {
     ASSERT_FALSE(ParseUtil::StringValidator::isValidUnsigned("-1"));
 }
 
-// StringValidator::isValidDouble
+// StringValidator::isValidLongDouble
 
-TEST(ParseUtilStringValidatorDouble, eq) {
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-1.623e150"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("1.623e150"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("+1.623e150"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-1.623e-150"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("1.623e-150"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("+1.623"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-1.623"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("+123123"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-123123"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("123123"));
+TEST(ParseUtilStringValidatorLongDouble, eq) {
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("-1.623e150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("1.623e150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("+1.623e150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("-1.623e-150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("1.623e-150"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("+1.623"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("-1.623"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("+123123"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("-123123"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("123123"));
 }
 
 TEST(ParseUtilStringValidatorDouble, invalid) {
-    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("123helpfw"));
-    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("+ 123  extender"));
-    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble(""));
-    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("hello"));
-    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("-1.623e-150.53"));
-    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("+.623e-150"));
-    ASSERT_FALSE(ParseUtil::StringValidator::isValidDouble("1.e-150"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidLongDouble("123helpfw"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidLongDouble("+ 123  extender"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidLongDouble(""));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidLongDouble("hello"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidLongDouble("-1.623e-150.53"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidLongDouble("+.623e-150"));
+    ASSERT_FALSE(ParseUtil::StringValidator::isValidLongDouble("1.e-150"));
 }
 
 TEST(ParseUtilStringValidatorDouble, boundary) {
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("0"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("+0"));
-    ASSERT_TRUE(ParseUtil::StringValidator::isValidDouble("-0"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("0"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("+0"));
+    ASSERT_TRUE(ParseUtil::StringValidator::isValidLongDouble("-0"));
 }
 
 // StringValidator::isValidBoolean

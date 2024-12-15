@@ -161,7 +161,16 @@ namespace com_sakushira::cpp_lib {
             [[maybe_unused]] static bool isValidUnsigned(const std::string &str_);
 
             /**
-             * @brief 入力がdouble型に変換可能かを判定します。
+             * @brief 入力が`long double`型に変換可能かを判定します。
+             * @param str_ 倍精度浮動小数点数を表した文字列
+             * @return 判定結果
+             * @since v0.1.0-alpha
+             * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
+             */
+            [[maybe_unused]] static bool isValidLongDouble(const std::string &str_);
+
+            /**
+             * @brief 入力が`double`型に変換可能かを判定します。
              * @param str_ 倍精度浮動小数点数を表した文字列
              * @return 判定結果
              * @since v0.1.0-alpha
@@ -190,6 +199,7 @@ namespace com_sakushira::cpp_lib {
 
             const static std::regex _signedPattern;
             const static std::regex _unsignedPattern;
+            const static std::regex _longDoublePattern;
             const static std::regex _doublePattern;
             const static std::regex _booleanPattern;
         };
