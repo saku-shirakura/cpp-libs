@@ -233,9 +233,9 @@ namespace com_sakushira::cpp_lib {
 
                 explicit VContainer(unsigned v_);
 
-                explicit VContainer(int64_t v_);
+                explicit VContainer(long long v_);
 
-                explicit VContainer(uint64_t v_);
+                explicit VContainer(unsigned long long v_);
 
                 /**
                  * @brief 保有する値の型を確認します。
