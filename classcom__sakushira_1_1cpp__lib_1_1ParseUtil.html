@@ -74,6 +74,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcom__sakushira_1_1cpp__lib_1_1ParseUtil-members.html">List of all members</a>  </div>
@@ -86,6 +87,12 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="ParseUtil_8h_source.html">ParseUtil.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html">StringValidator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列が、整数や真偽型に変換可能かどうかを判定します。  <a href="classcom__sakushira_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad903cb47398cd7e93a4ae909c1640d7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ParseUtil.html#ad903cb47398cd7e93a4ae909c1640d7e">ParseUtil</a> ()=delete</td></tr>
@@ -107,13 +114,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a180d891baf15b11b9c645401f248851e"><td class="mdescLeft">&#160;</td><td class="mdescRight">範囲を指定して部分文字列を取得する。  <br /></td></tr>
 <tr class="separator:a180d891baf15b11b9c645401f248851e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e7ac3e4edea6926ce174e4591783a38"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ParseUtil.html#a0e7ac3e4edea6926ce174e4591783a38">split</a> (const std::string &amp;str, const std::string &amp;delim=&quot; &quot;)</td></tr>
-<tr class="memdesc:a0e7ac3e4edea6926ce174e4591783a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">delimを基準に分割し、結果の配列を返す。 @detalis 出力にdelimは含まれません。  <br /></td></tr>
+<tr class="memdesc:a0e7ac3e4edea6926ce174e4591783a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">delimを基準に分割し、結果の配列を返す。  <br /></td></tr>
 <tr class="separator:a0e7ac3e4edea6926ce174e4591783a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5154d5a12f213ea4213e38bbc6e7d8"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ParseUtil.html#a7b5154d5a12f213ea4213e38bbc6e7d8">appendAll</a> (const std::vector&lt; std::string &gt; &amp;input, const std::string &amp;glue=&quot;&quot;)</td></tr>
+<tr class="memdesc:a7b5154d5a12f213ea4213e38bbc6e7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">inputの値をすべて連結し、結果を返します。  <br /></td></tr>
+<tr class="separator:a7b5154d5a12f213ea4213e38bbc6e7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>パーサの実装に便利なユーティリティクラス </p>
 <p>このクラスのメンバ関数はすべて静的関数です。</p>
-<p>このクラスはインスタンス化できません。 </p>
+<p>このクラスはインスタンス化できません。 </p><dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad903cb47398cd7e93a4ae909c1640d7e" name="ad903cb47398cd7e93a4ae909c1640d7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad903cb47398cd7e93a4ae909c1640d7e">&#9670;&#160;</a></span>ParseUtil()</h2>
@@ -141,6 +151,53 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7b5154d5a12f213ea4213e38bbc6e7d8" name="a7b5154d5a12f213ea4213e38bbc6e7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b5154d5a12f213ea4213e38bbc6e7d8">&#9670;&#160;</a></span>appendAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string com_sakushira::cpp_lib::ParseUtil::appendAll </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>glue</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>inputの値をすべて連結し、結果を返します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>入力配列 </td></tr>
+    <tr><td class="paramname">glue</td><td>連結時に要素間に挿入する文字列 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>連結した結果 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
 <a id="a180d891baf15b11b9c645401f248851e" name="a180d891baf15b11b9c645401f248851e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a180d891baf15b11b9c645401f248851e">&#9670;&#160;</a></span>slice() <span class="overload">[1/2]</span></h2>
 
@@ -197,10 +254,11 @@ beg &gt; end: beg以降のすべての文字からなる部分文字列 </dd>
 beg = end: end以前のすべての文字からなる部分文字列 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ParseUtilOutOfRange.html">ParseUtilOutOfRange</a></td><td>begまたはendのいずれかがstrの範囲を超過しています。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ParseUtilOutOfRange.html" title="ParseUtilで範囲外の値を指定した場合に送出される例外">ParseUtilOutOfRange</a></td><td>begまたはendのいずれかがstrの範囲を超過しています。 </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
 
 </div>
 </div>
@@ -262,10 +320,11 @@ beg &gt; end: beg以降のすべての要素からなる部分配列 </dd>
 beg = end: end以前のすべての要素からなる部分配列 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ParseUtilOutOfRange.html">ParseUtilOutOfRange</a></td><td>begまたはendのいずれかがarrayの範囲を超過しています。 </td></tr>
+    <tr><td class="paramname"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ParseUtilOutOfRange.html" title="ParseUtilで範囲外の値を指定した場合に送出される例外">ParseUtilOutOfRange</a></td><td>begまたはendのいずれかがarrayの範囲を超過しています。 </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
 
 </div>
 </div>
@@ -303,7 +362,8 @@ beg = end: end以前のすべての要素からなる部分配列 </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>delimを基準に分割し、結果の配列を返す。 @detalis 出力にdelimは含まれません。 </p>
+<p>delimを基準に分割し、結果の配列を返す。 </p>
+<p>出力にdelimは含まれません。</p>
 <p>delimを基準に文字が存在するかを問わず配列化するため、以下のような入力になります。</p>
 <p>delimは「,」とする。",a,,b,"を入力した場合{"", "a", "", "b", ""}となる。</p>
 <p>strに空文字列を与えた場合、空文字列のみを含む配列を返します。</p>
@@ -317,6 +377,7 @@ beg = end: end以前のすべての要素からなる部分配列 </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>delim.empty(): 1文字単位で分割され、文字列に変換された配列 </dd>
 <dd>
 else: delimを基準に分割されたた文字列の配列 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
 
 </div>
 </div>
@@ -352,7 +413,7 @@ else: delimを基準に分割されたた文字列の配列 </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;char&gt;に変換されたstr</dd></dl>
-<p>入力文字列をaとしたとき、「toString(toArray(a)) == a」となります。 </p>
+<p>入力文字列をaとしたとき、「toString(toArray(a)) == a」となります。 </p><dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
 
 </div>
 </div>
@@ -388,12 +449,12 @@ else: delimを基準に分割されたた文字列の配列 </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>stringに変換されたarray</dd></dl>
-<p>入力配列をaとしたとき、「toArray(toString(a)) == a」となります。 </p>
+<p>入力配列をaとしたとき、「toArray(toString(a)) == a」となります。 </p><dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="ParseUtil_8h_source.html">ParseUtil.h</a></li>
+<li>include/com_sakushira_cpp_lib/<a class="el" href="ParseUtil_8h_source.html">ParseUtil.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

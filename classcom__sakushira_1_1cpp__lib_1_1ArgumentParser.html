@@ -74,53 +74,221 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">com_sakushira::cpp_lib::ArgumentParser Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>型指定に対応したオプションを扱える引数パーサです。  
+ <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ArgumentParser_8h_source.html">ArgumentParser.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html">OptionAlias</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションのエイリアスとオプション名を紐づけるクラスです。  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html">OptionNames</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションの名称と型を紐づけるクラスです。  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optionで使用可能な型の値を格納します。  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ac1877a6ebd8d41e9e283f10e3b5716e5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a> { <br />
+&#160;&#160;<a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5a63b588d5559f64f89a416e656880b949">STRING</a>
+, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5a6898b46a1cde8a1572e2722c44c5ab07">SIGNED</a>
+, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5aaf36b47f395cd01f48b8fc1013665054">UNSIGNED</a>
+, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5aa30ec41f6da736498c907ffd7b0a082b">LONG_DOUBLE</a>
+, <br />
+&#160;&#160;<a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5ac48d5da12d702e73d6966069f2687376">BOOLEAN</a>
+, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5a9501320e4131132d94bff62eccb4ad2c">NULLITY</a>
+, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5abb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ac1877a6ebd8d41e9e283f10e3b5716e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">OptionValueが受け入れ可能な型を表す列挙型です。  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">More...</a><br /></td></tr>
+<tr class="separator:ac1877a6ebd8d41e9e283f10e3b5716e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b212949b13e75072676833e72c44971"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a4b212949b13e75072676833e72c44971">ArgumentParser</a> ()</td></tr>
+<tr class="memdesc:a4b212949b13e75072676833e72c44971"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションの型を指定しないパーサ  <br /></td></tr>
 <tr class="separator:a4b212949b13e75072676833e72c44971"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2527112cbb19d89655473dab59b05480"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a2527112cbb19d89655473dab59b05480">parse</a> (int argc, char *argv[])</td></tr>
-<tr class="separator:a2527112cbb19d89655473dab59b05480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae42802a1f508eac032f0e7414057df5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#aae42802a1f508eac032f0e7414057df5">ArgumentParser</a> (<a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html">OptionNames</a> type_)</td></tr>
+<tr class="memdesc:aae42802a1f508eac032f0e7414057df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションの型を指定するパーサ  <br /></td></tr>
+<tr class="separator:aae42802a1f508eac032f0e7414057df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9883543ac984570dbb670f25eb413a9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a9883543ac984570dbb670f25eb413a9f">ArgumentParser</a> (<a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html">OptionNames</a> type_, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html">OptionAlias</a> alias_)</td></tr>
+<tr class="memdesc:a9883543ac984570dbb670f25eb413a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションの型を指定し、それに対してエイリアスを設定するパーサ  <br /></td></tr>
+<tr class="separator:a9883543ac984570dbb670f25eb413a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceb8e67b72fbbd571b82467e54c7d341"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#aceb8e67b72fbbd571b82467e54c7d341">parse</a> (int argc_, char *argv_[])</td></tr>
+<tr class="separator:aceb8e67b72fbbd571b82467e54c7d341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed72cdef46d16344d341ec740056c75d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#aed72cdef46d16344d341ec740056c75d">parse</a> (const std::vector&lt; std::string &gt; &amp;args_)</td></tr>
 <tr class="memdesc:aed72cdef46d16344d341ec740056c75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数の配列をパースします。  <br /></td></tr>
 <tr class="separator:aed72cdef46d16344d341ec740056c75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace20ae73c240981fe0d7a827f3717c2a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ace20ae73c240981fe0d7a827f3717c2a">get_args</a> () const</td></tr>
-<tr class="memdesc:ace20ae73c240981fe0d7a827f3717c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">名前なし引数のリストを取得します。  <br /></td></tr>
-<tr class="separator:ace20ae73c240981fe0d7a827f3717c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2f27f3243c12b9c2bcce585d25b3849"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#aa2f27f3243c12b9c2bcce585d25b3849">get_arg</a> (size_t i) const</td></tr>
-<tr class="memdesc:aa2f27f3243c12b9c2bcce585d25b3849"><td class="mdescLeft">&#160;</td><td class="mdescRight">名前なし引数を取得します。  <br /></td></tr>
-<tr class="separator:aa2f27f3243c12b9c2bcce585d25b3849"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d1215ede31fa8ca4c7383b22378e526"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a7d1215ede31fa8ca4c7383b22378e526">get_named_arg</a> (const std::string &amp;key) const</td></tr>
-<tr class="memdesc:a7d1215ede31fa8ca4c7383b22378e526"><td class="mdescLeft">&#160;</td><td class="mdescRight">名前付き引数を取得します。  <br /></td></tr>
-<tr class="separator:a7d1215ede31fa8ca4c7383b22378e526"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a723d549d842f327bd8eca28c8ca19e75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a723d549d842f327bd8eca28c8ca19e75">is_exist_named_arg</a> (const std::string &amp;key) const</td></tr>
-<tr class="memdesc:a723d549d842f327bd8eca28c8ca19e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">名前付き引数が存在するか確認します。  <br /></td></tr>
-<tr class="separator:a723d549d842f327bd8eca28c8ca19e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a014618967a9499e3b0dadca19cb9bffa"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a014618967a9499e3b0dadca19cb9bffa">get_named_arg_int64</a> (const std::string &amp;key, int64_t default_value) const noexcept</td></tr>
-<tr class="memdesc:a014618967a9499e3b0dadca19cb9bffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">名前付き引数の値をint64_t取得します。  <br /></td></tr>
-<tr class="separator:a014618967a9499e3b0dadca19cb9bffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c0ee2a2bea41befb550c67a8aaf46b3"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a8c0ee2a2bea41befb550c67a8aaf46b3">get_named_arg_int64</a> (const std::string &amp;key) const</td></tr>
-<tr class="memdesc:a8c0ee2a2bea41befb550c67a8aaf46b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">名前付き引数の値をint64_t取得します。  <br /></td></tr>
-<tr class="separator:a8c0ee2a2bea41befb550c67a8aaf46b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68af0bd5bed81c431816aba93fdb321f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a68af0bd5bed81c431816aba93fdb321f">getArgs</a> () const</td></tr>
+<tr class="memdesc:a68af0bd5bed81c431816aba93fdb321f"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数のリストを取得します。  <br /></td></tr>
+<tr class="separator:a68af0bd5bed81c431816aba93fdb321f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2abdbc6f00321dbf588bf84823f82764"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a2abdbc6f00321dbf588bf84823f82764">getArg</a> (size_t i_) const</td></tr>
+<tr class="memdesc:a2abdbc6f00321dbf588bf84823f82764"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数を取得します。  <br /></td></tr>
+<tr class="separator:a2abdbc6f00321dbf588bf84823f82764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326b5b2c3f10aa083c9829d82a6c834b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a326b5b2c3f10aa083c9829d82a6c834b">getOption</a> (const std::string &amp;option_name_, const <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a> &amp;default_=<a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a>()) const</td></tr>
+<tr class="memdesc:a326b5b2c3f10aa083c9829d82a6c834b"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションを取得します。  <br /></td></tr>
+<tr class="separator:a326b5b2c3f10aa083c9829d82a6c834b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceda0ffd32498f06dd2c1c031a3caeef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#aceda0ffd32498f06dd2c1c031a3caeef">isExistOption</a> (const std::string &amp;key_) const</td></tr>
+<tr class="memdesc:aceda0ffd32498f06dd2c1c031a3caeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションが存在するか確認します。  <br /></td></tr>
+<tr class="separator:aceda0ffd32498f06dd2c1c031a3caeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa538a27b10199b908127a20c909339fc"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#aa538a27b10199b908127a20c909339fc">getInvalidOptions</a> () const</td></tr>
+<tr class="memdesc:aa538a27b10199b908127a20c909339fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">マッピングできなかったオプションを取得します。  <br /></td></tr>
+<tr class="separator:aa538a27b10199b908127a20c909339fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47935b29218276c2435417b72a64a18"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, std::vector&lt; std::pair&lt; std::string, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a> &gt; &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ab47935b29218276c2435417b72a64a18">getInvalidOptionTypes</a> () const</td></tr>
+<tr class="memdesc:ab47935b29218276c2435417b72a64a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプション名は存在するが、値が指定の型に変更不可能である不正なオプションを取得します。  <br /></td></tr>
+<tr class="separator:ab47935b29218276c2435417b72a64a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a85553f8e57df868bbfcaf2abf3570"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ae3a85553f8e57df868bbfcaf2abf3570">getInvalidAlias</a> () const</td></tr>
+<tr class="memdesc:ae3a85553f8e57df868bbfcaf2abf3570"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションと紐づけられていなかったエイリアスを取得します。  <br /></td></tr>
+<tr class="separator:ae3a85553f8e57df868bbfcaf2abf3570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a58697036484d87decde99ea4b167ea87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a58697036484d87decde99ea4b167ea87">_addOption</a> (const std::string &amp;option_name_, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a> value_)</td></tr>
+<tr class="memdesc:a58697036484d87decde99ea4b167ea87"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションを登録します。  <br /></td></tr>
+<tr class="separator:a58697036484d87decde99ea4b167ea87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406dab97ab4780c4aad69688934a7bb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a406dab97ab4780c4aad69688934a7bb6">_addArgument</a> (const std::string &amp;value_)</td></tr>
+<tr class="memdesc:a406dab97ab4780c4aad69688934a7bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数を登録します。  <br /></td></tr>
+<tr class="separator:a406dab97ab4780c4aad69688934a7bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abca8e26f842926422b73f2665dfcec2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#abca8e26f842926422b73f2665dfcec2e">_addInvalidOption</a> (const std::string &amp;option_name_, const std::string &amp;value_)</td></tr>
+<tr class="memdesc:abca8e26f842926422b73f2665dfcec2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">無効なオプションを登録します。  <br /></td></tr>
+<tr class="separator:abca8e26f842926422b73f2665dfcec2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de65f0259bf25ba869b90082c00ef07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a0de65f0259bf25ba869b90082c00ef07">_addInvalidOptionType</a> (const std::string &amp;option_name_, const std::string &amp;value_, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a> type_)</td></tr>
+<tr class="memdesc:a0de65f0259bf25ba869b90082c00ef07"><td class="mdescLeft">&#160;</td><td class="mdescRight">型が無効であったオプション名を登録します。  <br /></td></tr>
+<tr class="separator:a0de65f0259bf25ba869b90082c00ef07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cc6717cccde8532b59c39db6002409f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a6cc6717cccde8532b59c39db6002409f">_addInvalidAlias</a> (const std::string &amp;alias_name_, const std::string &amp;value_)</td></tr>
+<tr class="memdesc:a6cc6717cccde8532b59c39db6002409f"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプション名と紐づけがされていなかったエイリアスを登録します。  <br /></td></tr>
+<tr class="separator:a6cc6717cccde8532b59c39db6002409f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a4a2bfd62e4e66a29dc7a71f0b23b46c3"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a4a2bfd62e4e66a29dc7a71f0b23b46c3">_getOptionName</a> (const std::string &amp;option_arg_)</td></tr>
+<tr class="memdesc:a4a2bfd62e4e66a29dc7a71f0b23b46c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数から取得できる生のオプション名を接頭辞をとったオプション名に変換します。  <br /></td></tr>
+<tr class="separator:a4a2bfd62e4e66a29dc7a71f0b23b46c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7eaf5fc0dc0f93ff30433ade782d596"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ad7eaf5fc0dc0f93ff30433ade782d596">_getAliasName</a> (const std::string &amp;alias_arg_)</td></tr>
+<tr class="memdesc:ad7eaf5fc0dc0f93ff30433ade782d596"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数から取得できる生のエイリアスを接頭辞をとったエイリアスに変換します。  <br /></td></tr>
+<tr class="separator:ad7eaf5fc0dc0f93ff30433ade782d596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6431063be7f04a45ddcedc3c74301b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#aaf6431063be7f04a45ddcedc3c74301b">_isOptionName</a> (const std::string &amp;option_arg_)</td></tr>
+<tr class="memdesc:aaf6431063be7f04a45ddcedc3c74301b"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数がオプション名を表しているかを判定します。  <br /></td></tr>
+<tr class="separator:aaf6431063be7f04a45ddcedc3c74301b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af82dea8e7624b6d2eb8417d9dbe75088"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#af82dea8e7624b6d2eb8417d9dbe75088">_isAliasName</a> (const std::string &amp;alias_arg_)</td></tr>
+<tr class="memdesc:af82dea8e7624b6d2eb8417d9dbe75088"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数がエイリアスを表しているかを判定します。  <br /></td></tr>
+<tr class="separator:af82dea8e7624b6d2eb8417d9dbe75088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1b1d69523c9c886c4363374788f41f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#afa1b1d69523c9c886c4363374788f41f">_isValidType</a> (const std::string &amp;value_, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a> type_)</td></tr>
+<tr class="memdesc:afa1b1d69523c9c886c4363374788f41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列がOptionTypeに適合しているかを判定します。  <br /></td></tr>
+<tr class="separator:afa1b1d69523c9c886c4363374788f41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0348fdff3069a0b14303775e1d1013"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a5d0348fdff3069a0b14303775e1d1013">_convertOptionValue</a> (const std::string &amp;value_, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a> type_)</td></tr>
+<tr class="memdesc:a5d0348fdff3069a0b14303775e1d1013"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列をtype_に変換し、OptionValueにラップします。  <br /></td></tr>
+<tr class="separator:a5d0348fdff3069a0b14303775e1d1013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a3bad239c778f97c9ee94650bd1036c2c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a3bad239c778f97c9ee94650bd1036c2c">_args</a></td></tr>
+<tr class="memdesc:a3bad239c778f97c9ee94650bd1036c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプション以外の引数を保持します。順番を変更せずに格納されます。  <br /></td></tr>
 <tr class="separator:a3bad239c778f97c9ee94650bd1036c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a858a4128049e604dbb7846f52b70d2f0"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a858a4128049e604dbb7846f52b70d2f0">_named_arg</a></td></tr>
-<tr class="separator:a858a4128049e604dbb7846f52b70d2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a444339ff76dcfd3618e169678bd60ff1"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a444339ff76dcfd3618e169678bd60ff1">_options</a></td></tr>
+<tr class="memdesc:a444339ff76dcfd3618e169678bd60ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションのデータ  <br /></td></tr>
+<tr class="separator:a444339ff76dcfd3618e169678bd60ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03adcf63cd13279ea617da7cc2406c01"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a03adcf63cd13279ea617da7cc2406c01">_invalid_options</a></td></tr>
+<tr class="memdesc:a03adcf63cd13279ea617da7cc2406c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">無効なオプションのデータ  <br /></td></tr>
+<tr class="separator:a03adcf63cd13279ea617da7cc2406c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fdd825ed1f67cca5c332ae8b895454d"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::vector&lt; std::pair&lt; std::string, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a7fdd825ed1f67cca5c332ae8b895454d">_invalid_option_types</a></td></tr>
+<tr class="memdesc:a7fdd825ed1f67cca5c332ae8b895454d"><td class="mdescLeft">&#160;</td><td class="mdescRight">型が無効なオプションのデータ  <br /></td></tr>
+<tr class="separator:a7fdd825ed1f67cca5c332ae8b895454d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e14cb2aa5a6f3d722bf08d4d4b376d8"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a5e14cb2aa5a6f3d722bf08d4d4b376d8">_invalid_alias</a></td></tr>
+<tr class="memdesc:a5e14cb2aa5a6f3d722bf08d4d4b376d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">無効なエイリアスのデータ  <br /></td></tr>
+<tr class="separator:a5e14cb2aa5a6f3d722bf08d4d4b376d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25cc1608adfa69981f859ba6560753ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html">OptionNames</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a25cc1608adfa69981f859ba6560753ca">_valid_option_names</a></td></tr>
+<tr class="memdesc:a25cc1608adfa69981f859ba6560753ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">有効なオプション名とその型  <br /></td></tr>
+<tr class="separator:a25cc1608adfa69981f859ba6560753ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f9bb6d3d8d1084731f48b1c5cbf8bc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html">OptionAlias</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a0f9bb6d3d8d1084731f48b1c5cbf8bc9">_valid_alias</a></td></tr>
+<tr class="memdesc:a0f9bb6d3d8d1084731f48b1c5cbf8bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">有効なオプションエイリアス  <br /></td></tr>
+<tr class="separator:a0f9bb6d3d8d1084731f48b1c5cbf8bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c7bf5836525d961cdd5fc65b129c9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a29c7bf5836525d961cdd5fc65b129c9a">_option_mapper_mode</a></td></tr>
+<tr class="memdesc:a29c7bf5836525d961cdd5fc65b129c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションマッパーを使用せず、従来の方法で登録を行います。  <br /></td></tr>
+<tr class="separator:a29c7bf5836525d961cdd5fc65b129c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a23a479f788c778f2e2d5aea7cc4bceca"><td class="memItemLeft" align="right" valign="top">static const std::regex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a23a479f788c778f2e2d5aea7cc4bceca">_option_name_pattern</a></td></tr>
+<tr class="separator:a23a479f788c778f2e2d5aea7cc4bceca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4593a4cdefcf7a31617bc523ea93c2"><td class="memItemLeft" align="right" valign="top">static const std::regex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a9b4593a4cdefcf7a31617bc523ea93c2">_alias_name_pattern</a></td></tr>
+<tr class="separator:a9b4593a4cdefcf7a31617bc523ea93c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d20e72700c3c6ba46debdd73e8d70c1"><td class="memItemLeft" align="right" valign="top">static const std::regex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a1d20e72700c3c6ba46debdd73e8d70c1">_extract_option_name_pattern</a></td></tr>
+<tr class="separator:a1d20e72700c3c6ba46debdd73e8d70c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e66f4f8eb79132d567924c6e4f4a771"><td class="memItemLeft" align="right" valign="top">static const std::regex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#a0e66f4f8eb79132d567924c6e4f4a771">_extract_alias_name_pattern</a></td></tr>
+<tr class="separator:a0e66f4f8eb79132d567924c6e4f4a771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>型指定に対応したオプションを扱える引数パーサです。 </p>
+<p>このクラスでは以下の形式の引数をパースできます。</p><ul>
+<li>引数: 直前が「オプション名でない場合」又は「そのオプションが真偽型のフラグである場合」はすべて引数として扱います。</li>
+<li>オプション: ハイフン2回から始まる引数と引数の組み合わせで表現されます。ex: <code>--option val</code></li>
+<li>フラグ: フラグは真偽型のオプションを指します。たとえば、<code>option</code>がフラグの場合「<code>--option false</code>」と入力したとき、<code>option</code>の値は<code>true</code>となり, <code>false</code>は引数となります。</li>
+<li>エイリアス: ハイフン1回から始まる引数で表現されます。オプションの別名として扱われ、型を継承します。紐づけられていない場合は、<code>InvalidAlias</code>として扱われます。ex: <code>-o val</code> </li>
+</ul>
+<h2><a class="anchor" id="autotoc_md0"></a>
+例</h2>
+<p><code>hello --name echo --flag -c helloMode helpers -l 100</code></p>
+<p><code>-c</code>は<code>command</code>のエイリアス, <code>-l</code>は<code>length</code>のエイリアスです。結果は以下のようになります。</p><ul>
+<li>引数: <code>[hello, helpers]</code></li>
+<li>オプション: <code>[{name: "echo"}, {flag: true}, {command: "helloMode"}, {length: 100}]</code></li>
+</ul>
+<dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>v0.1.0-alpha オプションの型を指定できるようにしました。また、オプションの形式を変更しました。(key=val -&gt; &ndash;key val) </dd></dl>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ac1877a6ebd8d41e9e283f10e3b5716e5" name="ac1877a6ebd8d41e9e283f10e3b5716e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1877a6ebd8d41e9e283f10e3b5716e5">&#9670;&#160;</a></span>OptionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">com_sakushira::cpp_lib::ArgumentParser::OptionType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>OptionValueが受け入れ可能な型を表す列挙型です。 </p>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac1877a6ebd8d41e9e283f10e3b5716e5a63b588d5559f64f89a416e656880b949" name="ac1877a6ebd8d41e9e283f10e3b5716e5a63b588d5559f64f89a416e656880b949"></a>STRING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac1877a6ebd8d41e9e283f10e3b5716e5a6898b46a1cde8a1572e2722c44c5ab07" name="ac1877a6ebd8d41e9e283f10e3b5716e5a6898b46a1cde8a1572e2722c44c5ab07"></a>SIGNED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac1877a6ebd8d41e9e283f10e3b5716e5aaf36b47f395cd01f48b8fc1013665054" name="ac1877a6ebd8d41e9e283f10e3b5716e5aaf36b47f395cd01f48b8fc1013665054"></a>UNSIGNED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac1877a6ebd8d41e9e283f10e3b5716e5aa30ec41f6da736498c907ffd7b0a082b" name="ac1877a6ebd8d41e9e283f10e3b5716e5aa30ec41f6da736498c907ffd7b0a082b"></a>LONG_DOUBLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac1877a6ebd8d41e9e283f10e3b5716e5ac48d5da12d702e73d6966069f2687376" name="ac1877a6ebd8d41e9e283f10e3b5716e5ac48d5da12d702e73d6966069f2687376"></a>BOOLEAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac1877a6ebd8d41e9e283f10e3b5716e5a9501320e4131132d94bff62eccb4ad2c" name="ac1877a6ebd8d41e9e283f10e3b5716e5a9501320e4131132d94bff62eccb4ad2c"></a>NULLITY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac1877a6ebd8d41e9e283f10e3b5716e5abb1ca97ec761fc37101737ba0aa2e7c5" name="ac1877a6ebd8d41e9e283f10e3b5716e5abb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4b212949b13e75072676833e72c44971" name="a4b212949b13e75072676833e72c44971"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b212949b13e75072676833e72c44971">&#9670;&#160;</a></span>ArgumentParser()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b212949b13e75072676833e72c44971">&#9670;&#160;</a></span>ArgumentParser() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,123 +302,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa2f27f3243c12b9c2bcce585d25b3849" name="aa2f27f3243c12b9c2bcce585d25b3849"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2f27f3243c12b9c2bcce585d25b3849">&#9670;&#160;</a></span>get_arg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string com_sakushira::cpp_lib::ArgumentParser::get_arg </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>名前なし引数を取得します。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i</td><td>0以上の整数 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0から始まるリストのi番目の要素</dd></dl>
-<p>i番目の要素が存在しない場合は、空文字列が返されます。 </p>
+<p>オプションの型を指定しないパーサ </p>
+<p><code>_no_option_mapper</code>フラグを<code>true</code>にすることで、型指定を無効にします。 </p><dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>v0.1.0-alpha 従来の動作をこのモードで使用できるようにしました。 </dd></dl>
 
 </div>
 </div>
-<a id="ace20ae73c240981fe0d7a827f3717c2a" name="ace20ae73c240981fe0d7a827f3717c2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace20ae73c240981fe0d7a827f3717c2a">&#9670;&#160;</a></span>get_args()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; std::string &gt; &amp; com_sakushira::cpp_lib::ArgumentParser::get_args </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>名前なし引数のリストを取得します。 </p>
-<p>順番は、例えば<code>実行ファイル arg1 named=value arg2 arg3</code>と入力したならば、リストは、arg1, arg2, arg3とそのままの順番で返します。</p>
-<p>名前付き引数は別の関数で取得できます。詳しくは、get_named_argを参照してください。 </p>
-
-</div>
-</div>
-<a id="a7d1215ede31fa8ca4c7383b22378e526" name="a7d1215ede31fa8ca4c7383b22378e526"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d1215ede31fa8ca4c7383b22378e526">&#9670;&#160;</a></span>get_named_arg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string com_sakushira::cpp_lib::ArgumentParser::get_named_arg </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>名前付き引数を取得します。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td>取得したい引数の名前 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string 取得した引数の値</dd></dl>
-<p>この関数では、存在しない引数名を指定した場合、空文字列を返します。 </p>
-
-</div>
-</div>
-<a id="a8c0ee2a2bea41befb550c67a8aaf46b3" name="a8c0ee2a2bea41befb550c67a8aaf46b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c0ee2a2bea41befb550c67a8aaf46b3">&#9670;&#160;</a></span>get_named_arg_int64() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int64_t com_sakushira::cpp_lib::ArgumentParser::get_named_arg_int64 </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>名前付き引数の値をint64_t取得します。 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td>取得したい引数の名前 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>変換に失敗しました。 </td></tr>
-    <tr><td class="paramname">std::runtime_error</td><td>指定された引数の値は数値ではありませんでした。 </td></tr>
-    <tr><td class="paramname">std::out_of_range</td><td>値は範囲外です。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int64_t 名前付き引数の変換後の値 </dd></dl>
-
-</div>
-</div>
-<a id="a014618967a9499e3b0dadca19cb9bffa" name="a014618967a9499e3b0dadca19cb9bffa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a014618967a9499e3b0dadca19cb9bffa">&#9670;&#160;</a></span>get_named_arg_int64() <span class="overload">[2/2]</span></h2>
+<a id="aae42802a1f508eac032f0e7414057df5" name="aae42802a1f508eac032f0e7414057df5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae42802a1f508eac032f0e7414057df5">&#9670;&#160;</a></span>ArgumentParser() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,16 +318,663 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int64_t com_sakushira::cpp_lib::ArgumentParser::get_named_arg_int64 </td>
+          <td class="memname">com_sakushira::cpp_lib::ArgumentParser::ArgumentParser </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
+          <td class="paramtype"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html">OptionNames</a>&#160;</td>
+          <td class="paramname"><em>type_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>オプションの型を指定するパーサ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type_</td><td>オプションの名称と型を紐づけたデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a9883543ac984570dbb670f25eb413a9f" name="a9883543ac984570dbb670f25eb413a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9883543ac984570dbb670f25eb413a9f">&#9670;&#160;</a></span>ArgumentParser() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com_sakushira::cpp_lib::ArgumentParser::ArgumentParser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html">OptionNames</a>&#160;</td>
+          <td class="paramname"><em>type_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int64_t&#160;</td>
-          <td class="paramname"><em>default_value</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html">OptionAlias</a>&#160;</td>
+          <td class="paramname"><em>alias_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>オプションの型を指定し、それに対してエイリアスを設定するパーサ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type_</td><td>オプションの名称と型を紐づけたデータ </td></tr>
+    <tr><td class="paramname">alias_</td><td>オプションの名称とその別名を紐づけたデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a406dab97ab4780c4aad69688934a7bb6" name="a406dab97ab4780c4aad69688934a7bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a406dab97ab4780c4aad69688934a7bb6">&#9670;&#160;</a></span>_addArgument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com_sakushira::cpp_lib::ArgumentParser::_addArgument </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>引数を登録します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value_</td><td>引数の値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a6cc6717cccde8532b59c39db6002409f" name="a6cc6717cccde8532b59c39db6002409f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cc6717cccde8532b59c39db6002409f">&#9670;&#160;</a></span>_addInvalidAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com_sakushira::cpp_lib::ArgumentParser::_addInvalidAlias </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>alias_name_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>オプション名と紐づけがされていなかったエイリアスを登録します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alias_name_</td><td>紐づけがされていなかったエイリアス名 </td></tr>
+    <tr><td class="paramname">value_</td><td>エイリアスに指定されていた値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="abca8e26f842926422b73f2665dfcec2e" name="abca8e26f842926422b73f2665dfcec2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca8e26f842926422b73f2665dfcec2e">&#9670;&#160;</a></span>_addInvalidOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com_sakushira::cpp_lib::ArgumentParser::_addInvalidOption </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>option_name_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>無効なオプションを登録します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option_name_</td><td>無効であったオプション名 </td></tr>
+    <tr><td class="paramname">value_</td><td>オプションの値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a0de65f0259bf25ba869b90082c00ef07" name="a0de65f0259bf25ba869b90082c00ef07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de65f0259bf25ba869b90082c00ef07">&#9670;&#160;</a></span>_addInvalidOptionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com_sakushira::cpp_lib::ArgumentParser::_addInvalidOptionType </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>option_name_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a>&#160;</td>
+          <td class="paramname"><em>type_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>型が無効であったオプション名を登録します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option_name_</td><td>型が無効であったオプション名 </td></tr>
+    <tr><td class="paramname">value_</td><td>型に変換できなかった文字列 </td></tr>
+    <tr><td class="paramname">type_</td><td>期待されている型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a58697036484d87decde99ea4b167ea87" name="a58697036484d87decde99ea4b167ea87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58697036484d87decde99ea4b167ea87">&#9670;&#160;</a></span>_addOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com_sakushira::cpp_lib::ArgumentParser::_addOption </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>option_name_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a>&#160;</td>
+          <td class="paramname"><em>value_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>オプションを登録します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option_name_</td><td>登録したいオプションの名称 </td></tr>
+    <tr><td class="paramname">value_</td><td>オプションの値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a5d0348fdff3069a0b14303775e1d1013" name="a5d0348fdff3069a0b14303775e1d1013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0348fdff3069a0b14303775e1d1013">&#9670;&#160;</a></span>_convertOptionValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a> com_sakushira::cpp_lib::ArgumentParser::_convertOptionValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a>&#160;</td>
+          <td class="paramname"><em>type_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>文字列をtype_に変換し、OptionValueにラップします。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value_</td><td>対象文字列 </td></tr>
+    <tr><td class="paramname">type_</td><td>変換対象の型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value_をOptionValueにラップした値。 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="ad7eaf5fc0dc0f93ff30433ade782d596" name="ad7eaf5fc0dc0f93ff30433ade782d596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7eaf5fc0dc0f93ff30433ade782d596">&#9670;&#160;</a></span>_getAliasName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string com_sakushira::cpp_lib::ArgumentParser::_getAliasName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>alias_arg_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>引数から取得できる生のエイリアスを接頭辞をとったエイリアスに変換します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alias_arg_</td><td>変換したい生のエイリアス </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>変換後の文字列 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a4a2bfd62e4e66a29dc7a71f0b23b46c3" name="a4a2bfd62e4e66a29dc7a71f0b23b46c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2bfd62e4e66a29dc7a71f0b23b46c3">&#9670;&#160;</a></span>_getOptionName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string com_sakushira::cpp_lib::ArgumentParser::_getOptionName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>option_arg_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>引数から取得できる生のオプション名を接頭辞をとったオプション名に変換します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option_arg_</td><td>変換したい生のオプション名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>変換後の文字列 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="af82dea8e7624b6d2eb8417d9dbe75088" name="af82dea8e7624b6d2eb8417d9dbe75088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af82dea8e7624b6d2eb8417d9dbe75088">&#9670;&#160;</a></span>_isAliasName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool com_sakushira::cpp_lib::ArgumentParser::_isAliasName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>alias_arg_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>引数がエイリアスを表しているかを判定します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alias_arg_</td><td>判定したい引数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>判定結果 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="aaf6431063be7f04a45ddcedc3c74301b" name="aaf6431063be7f04a45ddcedc3c74301b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf6431063be7f04a45ddcedc3c74301b">&#9670;&#160;</a></span>_isOptionName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool com_sakushira::cpp_lib::ArgumentParser::_isOptionName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>option_arg_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>引数がオプション名を表しているかを判定します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option_arg_</td><td>判定したい引数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>判定結果 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="afa1b1d69523c9c886c4363374788f41f" name="afa1b1d69523c9c886c4363374788f41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa1b1d69523c9c886c4363374788f41f">&#9670;&#160;</a></span>_isValidType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool com_sakushira::cpp_lib::ArgumentParser::_isValidType </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a>&#160;</td>
+          <td class="paramname"><em>type_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>文字列がOptionTypeに適合しているかを判定します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value_</td><td>判定したい文字列 </td></tr>
+    <tr><td class="paramname">type_</td><td>判定したい対象の型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>判定結果 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a2abdbc6f00321dbf588bf84823f82764" name="a2abdbc6f00321dbf588bf84823f82764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2abdbc6f00321dbf588bf84823f82764">&#9670;&#160;</a></span>getArg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string com_sakushira::cpp_lib::ArgumentParser::getArg </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i_</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引数を取得します。 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i_</td><td>0以上の整数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0から始まるリストのi番目の要素</dd></dl>
+<p>i番目の要素が存在しない場合は、空文字列が返されます。 </p><dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a68af0bd5bed81c431816aba93fdb321f" name="a68af0bd5bed81c431816aba93fdb321f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68af0bd5bed81c431816aba93fdb321f">&#9670;&#160;</a></span>getArgs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::string &gt; &amp; com_sakushira::cpp_lib::ArgumentParser::getArgs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引数のリストを取得します。 </p>
+<p>順番は、例えば<code>実行ファイル arg1 --option value arg2 arg3</code>と入力したならば、リストは、<code>[arg1, arg2, arg3]</code>とそのままの順番で返します。</p>
+<p>オプションは別の関数で取得できます。詳しくは、getOptionを参照してください。 </p><dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="ae3a85553f8e57df868bbfcaf2abf3570" name="ae3a85553f8e57df868bbfcaf2abf3570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a85553f8e57df868bbfcaf2abf3570">&#9670;&#160;</a></span>getInvalidAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp; com_sakushira::cpp_lib::ArgumentParser::getInvalidAlias </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>オプションと紐づけられていなかったエイリアスを取得します。 </p>
+<dl class="section return"><dt>Returns</dt><dd>紐づけられていなかったエイリアス名をキーとした、値とのマップ </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="aa538a27b10199b908127a20c909339fc" name="aa538a27b10199b908127a20c909339fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa538a27b10199b908127a20c909339fc">&#9670;&#160;</a></span>getInvalidOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp; com_sakushira::cpp_lib::ArgumentParser::getInvalidOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>マッピングできなかったオプションを取得します。 </p>
+<dl class="section return"><dt>Returns</dt><dd>マッピングできなかったオプションのオプション名をキーとしたマップ </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="ab47935b29218276c2435417b72a64a18" name="ab47935b29218276c2435417b72a64a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47935b29218276c2435417b72a64a18">&#9670;&#160;</a></span>getInvalidOptionTypes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; std::string, std::vector&lt; std::pair&lt; std::string, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a> &gt; &gt; &gt; &amp; com_sakushira::cpp_lib::ArgumentParser::getInvalidOptionTypes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>オプション名は存在するが、値が指定の型に変更不可能である不正なオプションを取得します。 </p>
+<dl class="section return"><dt>Returns</dt><dd>オプション名をキーとした、値と正常な型のマップ </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
+
+</div>
+</div>
+<a id="a326b5b2c3f10aa083c9829d82a6c834b" name="a326b5b2c3f10aa083c9829d82a6c834b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a326b5b2c3f10aa083c9829d82a6c834b">&#9670;&#160;</a></span>getOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a> com_sakushira::cpp_lib::ArgumentParser::getOption </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>option_name_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a> &amp;&#160;</td>
+          <td class="paramname"><em>default_</em> = <code><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a>()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -276,51 +982,46 @@ Private Attributes</h2></td></tr>
           <td></td><td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>名前付き引数の値をint64_t取得します。 </p>
+<p>オプションを取得します。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>取得したい引数の名前 </td></tr>
-    <tr><td class="paramname">default_value</td><td>エラーが発生した場合に使用される値 </td></tr>
+    <tr><td class="paramname">option_name_</td><td>取得したいオプションの名称 </td></tr>
+    <tr><td class="paramname">default_</td><td>存在しない場合に返す値 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int64_t 名前付き引数の変換後の値</dd></dl>
-<p>名前付き引数を変換します。</p>
-<p>例外が捕捉された場合はdefault_valueを返します。 </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html" title="Optionで使用可能な型の値を格納します。">OptionValue</a> 取得した引数の値</dd></dl>
+<p>存在しないオプション名を指定した場合、default_を返します。 </p><dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
 
 </div>
 </div>
-<a id="a723d549d842f327bd8eca28c8ca19e75" name="a723d549d842f327bd8eca28c8ca19e75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a723d549d842f327bd8eca28c8ca19e75">&#9670;&#160;</a></span>is_exist_named_arg()</h2>
+<a id="aceda0ffd32498f06dd2c1c031a3caeef" name="aceda0ffd32498f06dd2c1c031a3caeef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceda0ffd32498f06dd2c1c031a3caeef">&#9670;&#160;</a></span>isExistOption()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool com_sakushira::cpp_lib::ArgumentParser::is_exist_named_arg </td>
+          <td class="memname">bool com_sakushira::cpp_lib::ArgumentParser::isExistOption </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
+          <td class="paramname"><em>key_</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>名前付き引数が存在するか確認します。 </p>
+<p>オプションが存在するか確認します。 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>取得したい引数の名前 </td></tr>
+    <tr><td class="paramname">key_</td><td>取得したいオプションの名前 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool 名前付き引数が存在したかの結果 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool オプションが存在したかの結果 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>v0.1.0-alpha </dd></dl>
 
 </div>
 </div>
@@ -347,16 +1048,17 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>引数の配列をパースし、名前付き引数と名前がない引数を分けて格納します。</p>
-<p>名前付き引数: &lt;name&gt;=&lt;value&gt;</p>
-<p>パース後: std::map&lt;std::string, std::string&gt; named_arg{{&lt;name&gt;, &lt;value&gt;}}</p>
-<p>名前なし引数: &lt;value1&gt; &lt;value2&gt; &lt;value3&gt; ...</p>
-<p>パース後: std::array&lt;std::string&gt; no-named_arg{ &lt;value1&gt;, &lt;value2&gt;, &lt;value3&gt;, ...} </p>
+<p>引数の配列をパースし、オプションと引数を分けて格納します。</p>
+<p>valueは任意です。</p>
+<p>オプションは次の形式を指します。 <code>--option_name value</code></p>
+<p>エイリアスは次の形式を指します。 <code>-alias_name value</code></p>
+<p>それ以外は、すべて引数として扱われます。 </p><dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>v0.1.0-alpha パースできるオプションの形式を変更しました。(<code>key=val -&gt; --key val</code>) </dd></dl>
 
 </div>
 </div>
-<a id="a2527112cbb19d89655473dab59b05480" name="a2527112cbb19d89655473dab59b05480"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2527112cbb19d89655473dab59b05480">&#9670;&#160;</a></span>parse() <span class="overload">[2/2]</span></h2>
+<a id="aceb8e67b72fbbd571b82467e54c7d341" name="aceb8e67b72fbbd571b82467e54c7d341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb8e67b72fbbd571b82467e54c7d341">&#9670;&#160;</a></span>parse() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,13 +1067,13 @@ Private Attributes</h2></td></tr>
           <td class="memname">void com_sakushira::cpp_lib::ArgumentParser::parse </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>argc</em>, </td>
+          <td class="paramname"><em>argc_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argv</em>[]&#160;</td>
+          <td class="paramname"><em>argv_</em>[]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -382,15 +1084,38 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">argc</td><td>コマンドライン引数の数 </td></tr>
-    <tr><td class="paramname">argv</td><td>char*型のコマンドライン引数の配列 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </td></tr>
+    <tr><td class="paramname">argc_</td><td>コマンドライン引数の数 </td></tr>
+    <tr><td class="paramname">argv_</td><td>char*型のコマンドライン引数の配列 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section since"><dt>Since</dt><dd>v0.0.1-alpha </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9b4593a4cdefcf7a31617bc523ea93c2" name="a9b4593a4cdefcf7a31617bc523ea93c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4593a4cdefcf7a31617bc523ea93c2">&#9670;&#160;</a></span>_alias_name_pattern</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::regex com_sakushira::cpp_lib::ArgumentParser::_alias_name_pattern</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3bad239c778f97c9ee94650bd1036c2c" name="a3bad239c778f97c9ee94650bd1036c2c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3bad239c778f97c9ee94650bd1036c2c">&#9670;&#160;</a></span>_args</h2>
 
@@ -411,10 +1136,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>オプション以外の引数を保持します。順番を変更せずに格納されます。 </p>
+
 </div>
 </div>
-<a id="a858a4128049e604dbb7846f52b70d2f0" name="a858a4128049e604dbb7846f52b70d2f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a858a4128049e604dbb7846f52b70d2f0">&#9670;&#160;</a></span>_named_arg</h2>
+<a id="a0e66f4f8eb79132d567924c6e4f4a771" name="a0e66f4f8eb79132d567924c6e4f4a771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e66f4f8eb79132d567924c6e4f4a771">&#9670;&#160;</a></span>_extract_alias_name_pattern</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -423,7 +1150,51 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::string, std::string&gt; com_sakushira::cpp_lib::ArgumentParser::_named_arg</td>
+          <td class="memname">const std::regex com_sakushira::cpp_lib::ArgumentParser::_extract_alias_name_pattern</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d20e72700c3c6ba46debdd73e8d70c1" name="a1d20e72700c3c6ba46debdd73e8d70c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d20e72700c3c6ba46debdd73e8d70c1">&#9670;&#160;</a></span>_extract_option_name_pattern</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::regex com_sakushira::cpp_lib::ArgumentParser::_extract_option_name_pattern</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e14cb2aa5a6f3d722bf08d4d4b376d8" name="a5e14cb2aa5a6f3d722bf08d4d4b376d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e14cb2aa5a6f3d722bf08d4d4b376d8">&#9670;&#160;</a></span>_invalid_alias</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; com_sakushira::cpp_lib::ArgumentParser::_invalid_alias</td>
         </tr>
       </table>
   </td>
@@ -433,10 +1204,178 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>無効なエイリアスのデータ </p>
+
+</div>
+</div>
+<a id="a7fdd825ed1f67cca5c332ae8b895454d" name="a7fdd825ed1f67cca5c332ae8b895454d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fdd825ed1f67cca5c332ae8b895454d">&#9670;&#160;</a></span>_invalid_option_types</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, std::vector&lt;std::pair&lt;std::string , <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#ac1877a6ebd8d41e9e283f10e3b5716e5">OptionType</a> &gt; &gt; &gt; com_sakushira::cpp_lib::ArgumentParser::_invalid_option_types</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>型が無効なオプションのデータ </p>
+
+</div>
+</div>
+<a id="a03adcf63cd13279ea617da7cc2406c01" name="a03adcf63cd13279ea617da7cc2406c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03adcf63cd13279ea617da7cc2406c01">&#9670;&#160;</a></span>_invalid_options</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; com_sakushira::cpp_lib::ArgumentParser::_invalid_options</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>無効なオプションのデータ </p>
+
+</div>
+</div>
+<a id="a29c7bf5836525d961cdd5fc65b129c9a" name="a29c7bf5836525d961cdd5fc65b129c9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c7bf5836525d961cdd5fc65b129c9a">&#9670;&#160;</a></span>_option_mapper_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool com_sakushira::cpp_lib::ArgumentParser::_option_mapper_mode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>オプションマッパーを使用せず、従来の方法で登録を行います。 </p>
+
+</div>
+</div>
+<a id="a23a479f788c778f2e2d5aea7cc4bceca" name="a23a479f788c778f2e2d5aea7cc4bceca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23a479f788c778f2e2d5aea7cc4bceca">&#9670;&#160;</a></span>_option_name_pattern</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::regex com_sakushira::cpp_lib::ArgumentParser::_option_name_pattern</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a444339ff76dcfd3618e169678bd60ff1" name="a444339ff76dcfd3618e169678bd60ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a444339ff76dcfd3618e169678bd60ff1">&#9670;&#160;</a></span>_options</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, <a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">OptionValue</a>&gt; com_sakushira::cpp_lib::ArgumentParser::_options</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>オプションのデータ </p>
+
+</div>
+</div>
+<a id="a0f9bb6d3d8d1084731f48b1c5cbf8bc9" name="a0f9bb6d3d8d1084731f48b1c5cbf8bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f9bb6d3d8d1084731f48b1c5cbf8bc9">&#9670;&#160;</a></span>_valid_alias</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html">OptionAlias</a> com_sakushira::cpp_lib::ArgumentParser::_valid_alias</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>有効なオプションエイリアス </p>
+
+</div>
+</div>
+<a id="a25cc1608adfa69981f859ba6560753ca" name="a25cc1608adfa69981f859ba6560753ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25cc1608adfa69981f859ba6560753ca">&#9670;&#160;</a></span>_valid_option_names</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html">OptionNames</a> com_sakushira::cpp_lib::ArgumentParser::_valid_option_names</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>有効なオプション名とその型 </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="ArgumentParser_8h_source.html">ArgumentParser.h</a></li>
+<li>include/com_sakushira_cpp_lib/<a class="el" href="ArgumentParser_8h_source.html">ArgumentParser.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cpp-libs: include/ArgumentParser.h File Reference</title>
+<title>cpp-libs: include/com_sakushira_cpp_lib/ArgumentParser.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8590275fabae4ad53c21a1e1ecd1ac3c.html">com_sakushira_cpp_lib</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,16 +82,33 @@ $(function() {
 
 <p>コマンドライン引数をパースする  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="shorthand_8h_source.html">shorthand.h</a>&quot;</code><br />
+<code>#include &lt;cinttypes&gt;</code><br />
+<code>#include &lt;regex&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
-<code>#include &lt;cinttypes&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="ArgumentParser_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html">com_sakushira::cpp_lib::ArgumentParser</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">型指定に対応したオプションを扱える引数パーサです。  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html">com_sakushira::cpp_lib::ArgumentParser::OptionValue</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optionで使用可能な型の値を格納します。  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue_1_1VContainer.html">com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">OptionValueを格納するためのコンテナクラス  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue_1_1VContainer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html">com_sakushira::cpp_lib::ArgumentParser::OptionNames</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションの名称と型を紐づけるクラスです。  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html">com_sakushira::cpp_lib::ArgumentParser::OptionAlias</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">オプションのエイリアスとオプション名を紐づけるクラスです。  <a href="classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>

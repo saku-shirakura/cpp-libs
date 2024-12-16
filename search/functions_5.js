@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['toarray_0',['toArray',['../classcom__sakushira_1_1cpp__lib_1_1ParseUtil.html#a611c5e181f2a1988e02a255fed9c0d6c',1,'com_sakushira::cpp_lib::ParseUtil']]],
-  ['tostring_1',['toString',['../classcom__sakushira_1_1cpp__lib_1_1ParseUtil.html#ae6f77bb84c89ecbf69a967b3f6e530c8',1,'com_sakushira::cpp_lib::ParseUtil']]]
+  ['optionalias_0',['OptionAlias',['../classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#ad535de7621968e2b8e111ce8bfe12594',1,'com_sakushira::cpp_lib::ArgumentParser::OptionAlias::OptionAlias()=default'],['../classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#aecf4f8110a1a0a5a6d48ce2748e56bd9',1,'com_sakushira::cpp_lib::ArgumentParser::OptionAlias::OptionAlias(std::unordered_map&lt; std::string, std::string &gt; table_)']]],
+  ['optionnames_1',['OptionNames',['../classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#a02fa6a9426b35673e9dfd46c8d9df5bd',1,'com_sakushira::cpp_lib::ArgumentParser::OptionNames::OptionNames()=default'],['../classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#a6e2bd74023418f24e38a3c1957ae54a3',1,'com_sakushira::cpp_lib::ArgumentParser::OptionNames::OptionNames(std::unordered_map&lt; std::string, OptionType &gt; table_)']]],
+  ['optionvalue_2',['OptionValue',['../classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a8024674475d55ec9e0c050fa777518a4',1,'com_sakushira::cpp_lib::ArgumentParser::OptionValue::OptionValue()'],['../classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a065acb2d98fd2ff2e099c847e8dde43e',1,'com_sakushira::cpp_lib::ArgumentParser::OptionValue::OptionValue(VContainer value_)']]]
 ];
