@@ -130,10 +130,10 @@ com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(cons
     : _value(static_cast<ull>(v_)) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const int64_t v_): _value(v_) {
+com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const long long v_): _value(v_) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const uint64_t v_): _value(v_) {
+com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const unsigned long long v_): _value(v_) {
 }
 
 com_sakushira::cpp_lib::ArgumentParser::OptionNames::OptionNames(
