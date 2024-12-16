@@ -1,6 +1,6 @@
 # cpp-libs
 
-[![test](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml/badge.svg)](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml)
+[![test](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml/badge.svg?branch=develop&event=pull_request)](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml)
 
 C++用の雑多なライブラリです。
 

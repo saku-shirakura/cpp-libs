@@ -43,8 +43,7 @@ TEST(ParseUtilToArray, eq) {
 }
 
 TEST(ParseUtilToArray, boundary) {
-    constexpr std::vector<char> valid{};
-    ASSERT_EQ(ParseUtil::toArray(""), valid);
+    ASSERT_EQ(ParseUtil::toArray(""), std::vector<char>());
 }
 
 // toString - toArrayの相互変換テスト

@@ -37,17 +37,17 @@ TEST(OptionValueCreateInstance, valid) {
     ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(-1));
     // 最大値・最小値
     // int64_tの最小値
-    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<int64_t>().min()));
+    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<ull>().min()));
     // int32_tの最小値
-    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<int32_t>().min()));
+    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<sll>().min()));
     // int64_tの最大値
-    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<int64_t>().max()));
+    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<ull>().max()));
     // int32_tの最大値
-    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<int32_t>().max()));
+    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<sll>().max()));
     // uint64_tの最大値
-    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<uint64_t>().max()));
+    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<ull>().max()));
     // uint32_tの最大値
-    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<uint32_t>().max()));
+    ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<sll>().max()));
     // floatの最大値
     ASSERT_NO_THROW(ArgumentParser::OptionValue::createInstance(std::numeric_limits<float>().max()));
     // doubleの最大値
