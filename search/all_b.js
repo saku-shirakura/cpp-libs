@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['removealias_0',['removeAlias',['../classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#a23184c9de4a249a0fafa9af4477b5e60',1,'com_sakushira::cpp_lib::ArgumentParser::OptionAlias']]],
-  ['removeoption_1',['removeOption',['../classcom__sakushira_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#a30ac24f90732c71f1c367045d0045af1',1,'com_sakushira::cpp_lib::ArgumentParser::OptionNames']]]
+  ['removealias_0',['removeAlias',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#ae95308ee88ab4d3b724e8b8afbb136b8',1,'net_ln3::cpp_lib::ArgumentParser::OptionAlias']]],
+  ['removeoption_1',['removeOption',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#a2ec7271f02db5271dfef8ab629057b85',1,'net_ln3::cpp_lib::ArgumentParser::OptionNames']]]
 ];
