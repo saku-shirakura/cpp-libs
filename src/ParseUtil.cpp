@@ -1,6 +1,6 @@
-#include <com_sakushira_cpp_lib/ParseUtil.h>
+#include <net_ln3/cpp_lib/ParseUtil.h>
 
-namespace com_sakushira::cpp_lib {
+namespace net_ln3::cpp_lib {
 
     template<class T>
     [[maybe_unused]] std::vector<T> ParseUtil::slice(std::vector<T> array, size_t beg, size_t end) {
@@ -129,4 +129,4 @@ namespace com_sakushira::cpp_lib {
     const std::regex ParseUtil::StringValidator::_longDoublePattern(R"([+\-]?(([1-9][0-9]*)|(0))(\.[0-9]+)?(e[+-]?(([1-9][0-9]{0,3})|0))?)");
     const std::regex ParseUtil::StringValidator::_doublePattern(R"([+\-]?(([1-9][0-9]*)|(0))(\.[0-9]+)?(e[+-]?(([1-9][0-9]{0,2})|0))?)");
     const std::regex ParseUtil::StringValidator::_booleanPattern(R"((true)|(false))", std::regex::icase);
-}// namespace com_sakushira::cpp_lib
+}// namespace net_ln3::cpp_lib

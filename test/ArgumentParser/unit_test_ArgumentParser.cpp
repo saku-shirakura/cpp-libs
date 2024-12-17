@@ -22,10 +22,10 @@
 
 
 #include <gtest/gtest.h>
-#include <com_sakushira_cpp_lib/ArgumentParser.h>
-#include <com_sakushira_cpp_lib/ParseUtil.h>
+#include <net_ln3/cpp_lib/ArgumentParser.h>
+#include <net_ln3/cpp_lib/ParseUtil.h>
 
-using namespace com_sakushira::cpp_lib;
+using namespace net_ln3::cpp_lib;
 
 TEST(ArgumentParserParse, validNoMap) {
     ArgumentParser parser;

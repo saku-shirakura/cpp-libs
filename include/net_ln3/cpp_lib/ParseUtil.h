@@ -37,12 +37,12 @@
 #include <regex>
 #include <numeric>
 
-namespace com_sakushira::cpp_lib {
+namespace net_ln3::cpp_lib {
 /**
  * @brief ParseUtilで範囲外の値を指定した場合に送出される例外
  * @since v0.0.1-alpha
  * */
-    class ParseUtilOutOfRange : std::out_of_range {
+    class ParseUtilOutOfRange final : std::out_of_range {
     public:
         explicit ParseUtilOutOfRange(const std::string &message) : std::out_of_range(message) {}
     };
