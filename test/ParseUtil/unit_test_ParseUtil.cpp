@@ -20,10 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <com_sakushira_cpp_lib/ParseUtil.h>
+#include <net_ln3/cpp_lib/ParseUtil.h>
 #include <gtest/gtest.h>
 
-using namespace com_sakushira::cpp_lib;
+using namespace net_ln3::cpp_lib;
 
 // toStringのテスト
 

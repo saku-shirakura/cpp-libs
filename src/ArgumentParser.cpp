@@ -22,16 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <com_sakushira_cpp_lib/ArgumentParser.h>
-#include <com_sakushira_cpp_lib/shorthand.h>
+#include <net_ln3/cpp_lib/ArgumentParser.h>
+#include <net_ln3/cpp_lib/shorthand.h>
 #include <regex>
 #include <utility>
-#include <com_sakushira_cpp_lib/ParseUtil.h>
+#include <net_ln3/cpp_lib/ParseUtil.h>
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::OptionValue() : OptionValue(createInstance(nullptr)) {
+net_ln3::cpp_lib::ArgumentParser::OptionValue::OptionValue() : OptionValue(createInstance(nullptr)) {
 }
 
-std::string com_sakushira::cpp_lib::ArgumentParser::OptionValue::getString(const std::string &default_) const {
+std::string net_ln3::cpp_lib::ArgumentParser::OptionValue::getString(const std::string &default_) const {
     if (isNull()) {
         return default_;
     }
@@ -53,94 +53,94 @@ std::string com_sakushira::cpp_lib::ArgumentParser::OptionValue::getString(const
     return default_;
 }
 
-sll com_sakushira::cpp_lib::ArgumentParser::OptionValue::getSigned(const sll default_) const {
+sll net_ln3::cpp_lib::ArgumentParser::OptionValue::getSigned(const sll default_) const {
     if (isSigned()) {
         return _container.getTypeValue<sll>();
     }
     return default_;
 }
 
-ull com_sakushira::cpp_lib::ArgumentParser::OptionValue::getUnsigned(const ull default_) const {
+ull net_ln3::cpp_lib::ArgumentParser::OptionValue::getUnsigned(const ull default_) const {
     if (isUnsigned())
         return _container.getTypeValue<ull>();
     return default_;
 }
 
-long double com_sakushira::cpp_lib::ArgumentParser::OptionValue::getLongDouble(const long double default_) const {
+long double net_ln3::cpp_lib::ArgumentParser::OptionValue::getLongDouble(const long double default_) const {
     if (isLongDouble())
         return _container.getTypeValue<long double>();
     return default_;
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionValue::getBoolean(const bool default_) const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionValue::getBoolean(const bool default_) const {
     if (isBoolean())
         return _container.getTypeValue<bool>();
     return default_;
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionValue::isNull() const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionValue::isNull() const {
     return _container.checkType<std::nullptr_t>();
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionValue::isString() const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionValue::isString() const {
     return _container.checkType<std::string>();
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionValue::isSigned() const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionValue::isSigned() const {
     return _container.checkType<sll>();
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionValue::isUnsigned() const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionValue::isUnsigned() const {
     return _container.checkType<ull>();
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionValue::isLongDouble() const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionValue::isLongDouble() const {
     return _container.checkType<long double>();
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionValue::isBoolean() const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionValue::isBoolean() const {
     return _container.checkType<bool>();
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const std::nullptr_t v_): _value(v_) {
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const std::nullptr_t v_): _value(v_) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const char *v_)
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const char *v_)
     : VContainer(std::string(v_)) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(std::string v_): _value(std::move(v_)) {
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(std::string v_): _value(std::move(v_)) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const long double v_): _value(v_) {
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const long double v_): _value(v_) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const double v_): _value(
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const double v_): _value(
     static_cast<long double>(v_)) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const bool v_): _value(v_) {
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const bool v_): _value(v_) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const int v_)
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const int v_)
     : _value(static_cast<sll>(v_)) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const unsigned v_)
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const unsigned v_)
     : _value(static_cast<ull>(v_)) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const long long v_): _value(v_) {
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const long long v_): _value(v_) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const unsigned long long v_): _value(v_) {
+net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const unsigned long long v_): _value(v_) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionNames::OptionNames(
+net_ln3::cpp_lib::ArgumentParser::OptionNames::OptionNames(
     std::unordered_map<std::string, OptionType> table_) : _name_type_table(std::move(table_)) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionType com_sakushira::cpp_lib::ArgumentParser::OptionNames::getOptionType(
+net_ln3::cpp_lib::ArgumentParser::OptionType net_ln3::cpp_lib::ArgumentParser::OptionNames::getOptionType(
     const std::string &option_name_) const {
     if (_name_type_table.contains(option_name_)) {
         if (const auto t = _name_type_table.at(option_name_); t != OptionType::NULLITY) {
@@ -150,11 +150,11 @@ com_sakushira::cpp_lib::ArgumentParser::OptionType com_sakushira::cpp_lib::Argum
     return OptionType();
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionNames::isExistOption(const std::string &option_name_) const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionNames::isExistOption(const std::string &option_name_) const {
     return _name_type_table.contains(option_name_);
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionNames::addOption(const std::string &option_name_,
+bool net_ln3::cpp_lib::ArgumentParser::OptionNames::addOption(const std::string &option_name_,
                                                                     OptionType type_) {
     if (_name_type_table.contains(option_name_)) {
         return false;
@@ -163,7 +163,7 @@ bool com_sakushira::cpp_lib::ArgumentParser::OptionNames::addOption(const std::s
     return true;
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionNames::removeOption(const std::string &option_name_) {
+bool net_ln3::cpp_lib::ArgumentParser::OptionNames::removeOption(const std::string &option_name_) {
     if (_name_type_table.contains(option_name_)) {
         _name_type_table.erase(option_name_);
         return true;
@@ -171,22 +171,22 @@ bool com_sakushira::cpp_lib::ArgumentParser::OptionNames::removeOption(const std
     return false;
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionAlias::OptionAlias(
+net_ln3::cpp_lib::ArgumentParser::OptionAlias::OptionAlias(
     std::unordered_map<std::string, std::string> table_) : _name_alias_table(std::move(table_)) {
 }
 
-std::string com_sakushira::cpp_lib::ArgumentParser::OptionAlias::getOptionName(const std::string &alias_name_) const {
+std::string net_ln3::cpp_lib::ArgumentParser::OptionAlias::getOptionName(const std::string &alias_name_) const {
     if (_name_alias_table.contains(alias_name_)) {
         return _name_alias_table.at(alias_name_);
     }
     return "";
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionAlias::isExistAlias(const std::string &alias_name_) const {
+bool net_ln3::cpp_lib::ArgumentParser::OptionAlias::isExistAlias(const std::string &alias_name_) const {
     return _name_alias_table.contains(alias_name_);
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionAlias::addAlias(const std::string &alias_name_,
+bool net_ln3::cpp_lib::ArgumentParser::OptionAlias::addAlias(const std::string &alias_name_,
                                                                    const std::string &option_name_) {
     if (_name_alias_table.contains(alias_name_)) {
         return false;
@@ -195,7 +195,7 @@ bool com_sakushira::cpp_lib::ArgumentParser::OptionAlias::addAlias(const std::st
     return true;
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::OptionAlias::removeAlias(const std::string &alias_name_) {
+bool net_ln3::cpp_lib::ArgumentParser::OptionAlias::removeAlias(const std::string &alias_name_) {
     if (_name_alias_table.contains(alias_name_)) {
         _name_alias_table.erase(alias_name_);
         return true;
@@ -203,25 +203,25 @@ bool com_sakushira::cpp_lib::ArgumentParser::OptionAlias::removeAlias(const std:
     return false;
 }
 
-com_sakushira::cpp_lib::ArgumentParser::ArgumentParser() : _option_mapper_mode(false) {
+net_ln3::cpp_lib::ArgumentParser::ArgumentParser() : _option_mapper_mode(false) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::ArgumentParser(OptionNames type_) : ArgumentParser(std::move(type_), {}) {
+net_ln3::cpp_lib::ArgumentParser::ArgumentParser(OptionNames type_) : ArgumentParser(std::move(type_), {}) {
 }
 
-com_sakushira::cpp_lib::ArgumentParser::ArgumentParser(OptionNames type_,
+net_ln3::cpp_lib::ArgumentParser::ArgumentParser(OptionNames type_,
                                                        OptionAlias
                                                        alias_) : _valid_option_names(std::move(type_)),
                                                                  _valid_alias(std::move(alias_)),
                                                                  _option_mapper_mode(true) {
 }
 
-void com_sakushira::cpp_lib::ArgumentParser::parse(const int argc_, char **argv_) {
+void net_ln3::cpp_lib::ArgumentParser::parse(const int argc_, char **argv_) {
     const std::vector<std::string> args(argv_, argv_ + argc_);
     this->parse(args);
 }
 
-void com_sakushira::cpp_lib::ArgumentParser::parse(const std::vector<std::string> &args_) {
+void net_ln3::cpp_lib::ArgumentParser::parse(const std::vector<std::string> &args_) {
     // 次のコマンドライン引数がオプションの値である
     bool option_value_flag = false;
     std::string option_name;
@@ -281,18 +281,18 @@ void com_sakushira::cpp_lib::ArgumentParser::parse(const std::vector<std::string
     }
 }
 
-const std::vector<std::string> &com_sakushira::cpp_lib::ArgumentParser::getArgs() const {
+const std::vector<std::string> &net_ln3::cpp_lib::ArgumentParser::getArgs() const {
     return _args;
 }
 
-std::string com_sakushira::cpp_lib::ArgumentParser::getArg(const size_t i_) const {
+std::string net_ln3::cpp_lib::ArgumentParser::getArg(const size_t i_) const {
     if (i_ < _args.size()) {
         return _args.at(i_);
     }
     return "";
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue com_sakushira::cpp_lib::ArgumentParser::getOption(
+net_ln3::cpp_lib::ArgumentParser::OptionValue net_ln3::cpp_lib::ArgumentParser::getOption(
     const std::string &option_name_, const OptionValue &default_) const {
     if (_options.contains(option_name_)) {
         return _options.at(option_name_);
@@ -300,43 +300,43 @@ com_sakushira::cpp_lib::ArgumentParser::OptionValue com_sakushira::cpp_lib::Argu
     return default_;
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::isExistOption(const std::string &key_) const {
+bool net_ln3::cpp_lib::ArgumentParser::isExistOption(const std::string &key_) const {
     return _options.contains(key_);
 }
 
 const std::unordered_map<std::string, std::vector<std::string> > &
-com_sakushira::cpp_lib::ArgumentParser::getInvalidOptions() const {
+net_ln3::cpp_lib::ArgumentParser::getInvalidOptions() const {
     return _invalid_options;
 }
 
 const std::unordered_map<std::string, std::vector<std::pair<std::string,
-    com_sakushira::cpp_lib::ArgumentParser::OptionType> > > &
-com_sakushira::cpp_lib::ArgumentParser::getInvalidOptionTypes() const {
+    net_ln3::cpp_lib::ArgumentParser::OptionType> > > &
+net_ln3::cpp_lib::ArgumentParser::getInvalidOptionTypes() const {
     return _invalid_option_types;
 }
 
 const std::unordered_map<std::string, std::vector<std::string> > &
-com_sakushira::cpp_lib::ArgumentParser::getInvalidAlias() const {
+net_ln3::cpp_lib::ArgumentParser::getInvalidAlias() const {
     return _invalid_alias;
 }
 
-std::string com_sakushira::cpp_lib::ArgumentParser::_getOptionName(const std::string &option_arg_) {
+std::string net_ln3::cpp_lib::ArgumentParser::_getOptionName(const std::string &option_arg_) {
     return std::regex_replace(option_arg_, _extract_option_name_pattern, "");
 }
 
-std::string com_sakushira::cpp_lib::ArgumentParser::_getAliasName(const std::string &alias_arg_) {
+std::string net_ln3::cpp_lib::ArgumentParser::_getAliasName(const std::string &alias_arg_) {
     return std::regex_replace(alias_arg_, _extract_alias_name_pattern, "");
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::_isOptionName(const std::string &option_arg_) {
+bool net_ln3::cpp_lib::ArgumentParser::_isOptionName(const std::string &option_arg_) {
     return std::regex_match(option_arg_, _option_name_pattern);
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::_isAliasName(const std::string &alias_arg_) {
+bool net_ln3::cpp_lib::ArgumentParser::_isAliasName(const std::string &alias_arg_) {
     return std::regex_match(alias_arg_, _alias_name_pattern);
 }
 
-void com_sakushira::cpp_lib::ArgumentParser::_addOption(const std::string &option_name_, OptionValue value_) {
+void net_ln3::cpp_lib::ArgumentParser::_addOption(const std::string &option_name_, OptionValue value_) {
     if (_options.contains(option_name_)) {
         _addInvalidOption(option_name_, value_.getString());
         return;
@@ -344,11 +344,11 @@ void com_sakushira::cpp_lib::ArgumentParser::_addOption(const std::string &optio
     _options.try_emplace(option_name_, value_);
 }
 
-void com_sakushira::cpp_lib::ArgumentParser::_addArgument(const std::string &value_) {
+void net_ln3::cpp_lib::ArgumentParser::_addArgument(const std::string &value_) {
     _args.push_back(value_);
 }
 
-void com_sakushira::cpp_lib::ArgumentParser::_addInvalidOption(const std::string &option_name_,
+void net_ln3::cpp_lib::ArgumentParser::_addInvalidOption(const std::string &option_name_,
                                                                const std::string &value_) {
     if (_invalid_options.contains(option_name_)) {
         _invalid_options.at(option_name_).emplace_back(value_);
@@ -357,7 +357,7 @@ void com_sakushira::cpp_lib::ArgumentParser::_addInvalidOption(const std::string
     _invalid_options.try_emplace(option_name_, std::vector({value_}));
 }
 
-void com_sakushira::cpp_lib::ArgumentParser::_addInvalidOptionType(const std::string &option_name_,
+void net_ln3::cpp_lib::ArgumentParser::_addInvalidOptionType(const std::string &option_name_,
                                                                    const std::string &value_,
                                                                    OptionType type_) {
     if (_invalid_option_types.contains(option_name_)) {
@@ -368,7 +368,7 @@ void com_sakushira::cpp_lib::ArgumentParser::_addInvalidOptionType(const std::st
                                       std::vector<std::pair<std::string, OptionType> >({{value_, type_}}));
 }
 
-void com_sakushira::cpp_lib::ArgumentParser::_addInvalidAlias(const std::string &alias_name_,
+void net_ln3::cpp_lib::ArgumentParser::_addInvalidAlias(const std::string &alias_name_,
                                                               const std::string &value_) {
     if (_invalid_alias.contains(alias_name_)) {
         _invalid_alias.at(alias_name_).emplace_back(value_);
@@ -377,7 +377,7 @@ void com_sakushira::cpp_lib::ArgumentParser::_addInvalidAlias(const std::string 
     _invalid_alias.try_emplace(alias_name_, std::vector({value_}));
 }
 
-bool com_sakushira::cpp_lib::ArgumentParser::_isValidType(const std::string &value_,
+bool net_ln3::cpp_lib::ArgumentParser::_isValidType(const std::string &value_,
                                                           const OptionType type_) {
     using sv = ParseUtil::StringValidator;
     switch (type_) {
@@ -399,7 +399,7 @@ bool com_sakushira::cpp_lib::ArgumentParser::_isValidType(const std::string &val
     return false;
 }
 
-com_sakushira::cpp_lib::ArgumentParser::OptionValue com_sakushira::cpp_lib::ArgumentParser::_convertOptionValue(
+net_ln3::cpp_lib::ArgumentParser::OptionValue net_ln3::cpp_lib::ArgumentParser::_convertOptionValue(
     const std::string &value_, const OptionType type_) {
     OptionValue ov;
     switch (type_) {
@@ -427,7 +427,7 @@ com_sakushira::cpp_lib::ArgumentParser::OptionValue com_sakushira::cpp_lib::Argu
     return ov;
 }
 
-const std::regex com_sakushira::cpp_lib::ArgumentParser::_option_name_pattern{"--.+"};
-const std::regex com_sakushira::cpp_lib::ArgumentParser::_alias_name_pattern{"-.+"};
-const std::regex com_sakushira::cpp_lib::ArgumentParser::_extract_option_name_pattern{"^--"};
-const std::regex com_sakushira::cpp_lib::ArgumentParser::_extract_alias_name_pattern{"^-"};
+const std::regex net_ln3::cpp_lib::ArgumentParser::_option_name_pattern{"--.+"};
+const std::regex net_ln3::cpp_lib::ArgumentParser::_alias_name_pattern{"-.+"};
+const std::regex net_ln3::cpp_lib::ArgumentParser::_extract_option_name_pattern{"^--"};
+const std::regex net_ln3::cpp_lib::ArgumentParser::_extract_alias_name_pattern{"^-"};

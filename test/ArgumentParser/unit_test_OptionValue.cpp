@@ -21,10 +21,10 @@
 // SOFTWARE.
 
 #include <gtest/gtest.h>
-#include <com_sakushira_cpp_lib/ArgumentParser.h>
-#include <com_sakushira_cpp_lib/shorthand.h>
+#include <net_ln3/cpp_lib/ArgumentParser.h>
+#include <net_ln3/cpp_lib/shorthand.h>
 
-using namespace com_sakushira::cpp_lib;
+using namespace net_ln3::cpp_lib;
 
 TEST(OptionValueCreateInstance, valid) {
     // 文字列の受け入れ検査
