@@ -31,8 +31,6 @@
 #ifndef DEVELOPER_TOOL_COMMANDPARSER_H
 #define DEVELOPER_TOOL_COMMANDPARSER_H
 
-#include "shorthand.h"
-#include <cinttypes>
 #include <regex>
 #include <string>
 #include <unordered_map>
@@ -135,7 +133,7 @@ namespace net_ln3::cpp_lib {
              * @return 格納している符号付き整数
              * @since v0.1.0-alpha
              */
-            [[nodiscard]] sll getSigned(sll default_ = 0) const;
+            [[nodiscard]] long long getSigned(long long default_ = 0) const;
 
             /**
              * @brief クラスが格納している値を符号なし整数として取得する。
@@ -144,7 +142,7 @@ namespace net_ln3::cpp_lib {
              * @return 格納している符号なし整数
              * @since v0.1.0-alpha
              */
-            [[nodiscard]] ull getUnsigned(ull default_ = 0) const;
+            [[nodiscard]] unsigned long long getUnsigned(unsigned long long default_ = 0) const;
 
             /**
              * @brief クラスが格納している値を浮動小数点数として取得する。
@@ -205,6 +203,41 @@ namespace net_ln3::cpp_lib {
              * @since v0.1.0-alpha
              */
             [[nodiscard]] bool isBoolean() const;
+
+            /**
+             * @brief OptionValue::getString()を省略するための演算子です。
+             * @return this->getString()
+             * @since v0.1.1-alpha
+             */
+            explicit operator std::string() const;
+
+            /**
+             * @brief OptionValue::getSigned()を省略するための演算子です。
+             * @return this->getSigned()
+             * @since v0.1.1-alpha
+             */
+            explicit operator long long() const;
+
+            /**
+             * @brief OptionValue::getUnsigned()を省略するための演算子です。
+             * @return this->getUnsigned()
+             * @since v0.1.1-alpha
+             */
+            explicit operator unsigned long() const;
+
+            /**
+             * @brief OptionValue::getLongDouble()を省略するための演算子です。
+             * @return this->getLongDouble()
+             * @since v0.1.1-alpha
+             */
+            explicit operator long double() const;
+
+            /**
+             * @brief OptionValue::getBoolean()を省略するための演算子です。
+             * @return this->getBoolean()
+             * @since v0.1.1-alpha
+             */
+            explicit operator bool() const;
 
         private:
             /**
