@@ -102,6 +102,26 @@ bool net_ln3::cpp_lib::ArgumentParser::OptionValue::isBoolean() const {
     return _container.checkType<bool>();
 }
 
+net_ln3::cpp_lib::ArgumentParser::OptionValue::operator std::string() const {
+    return getString();
+}
+
+net_ln3::cpp_lib::ArgumentParser::OptionValue::operator long long() const {
+    return getSigned();
+}
+
+net_ln3::cpp_lib::ArgumentParser::OptionValue::operator unsigned long() const {
+    return getUnsigned();
+}
+
+net_ln3::cpp_lib::ArgumentParser::OptionValue::operator long double() const {
+    return getLongDouble();
+}
+
+net_ln3::cpp_lib::ArgumentParser::OptionValue::operator bool() const {
+    return getBoolean();
+}
+
 net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer::VContainer(const std::nullptr_t v_): _value(v_) {
 }
 
