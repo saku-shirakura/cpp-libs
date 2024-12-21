@@ -36,23 +36,25 @@
 #include <stdexcept>
 #include <regex>
 #include <numeric>
+#include <set>
 
 namespace net_ln3::cpp_lib {
-/**
- * @brief ParseUtilで範囲外の値を指定した場合に送出される例外
- * @since v0.0.1-alpha
- * */
+    /**
+     * @brief ParseUtilで範囲外の値を指定した場合に送出される例外
+     * @since v0.0.1-alpha
+     * */
     class ParseUtilOutOfRange final : std::out_of_range {
     public:
-        explicit ParseUtilOutOfRange(const std::string &message) : std::out_of_range(message) {}
+        explicit ParseUtilOutOfRange(const std::string& message) : std::out_of_range(message) {
+        }
     };
 
-/**
- * @brief パーサの実装に便利なユーティリティクラス
- * @details このクラスのメンバ関数はすべて静的関数です。
- * @details このクラスはインスタンス化できません。
- * @since v0.0.1-alpha
- * */
+    /**
+     * @brief パーサの実装に便利なユーティリティクラス
+     * @details このクラスのメンバ関数はすべて静的関数です。
+     * @details このクラスはインスタンス化できません。
+     * @since v0.0.1-alpha
+     * */
     class ParseUtil {
     public:
         ParseUtil() = delete;
@@ -69,7 +71,7 @@ namespace net_ln3::cpp_lib {
          * @since v0.0.1-alpha
          */
 
-        template<class T>
+        template <class T>
         [[maybe_unused]] static std::vector<T> slice(std::vector<T> array, size_t beg, size_t end);
 
         /**
@@ -115,10 +117,10 @@ namespace net_ln3::cpp_lib {
          * @param str 分割対象の文字列
          * @param delim 分割の基準となる文字列
          * @returns delim.empty(): 1文字単位で分割され、文字列に変換された配列
-         * @returns else: delimを基準に分割されたた文字列の配列
+         * @returns else: delimを基準に分割された文字列の配列
          * @since v0.0.1-alpha
          */
-        [[maybe_unused]] static std::vector<std::string> split(const std::string &str, const std::string &delim = " ");
+        [[maybe_unused]] static std::vector<std::string> split(const std::string& str, const std::string& delim = " ");
 
         /**
          * @brief inputの値をすべて連結し、結果を返します。
@@ -128,8 +130,8 @@ namespace net_ln3::cpp_lib {
          * @since v0.1.0-alpha
          */
         [[maybe_unused]] static std::string appendAll(
-                const std::vector<std::string> &input,
-                const std::string &glue = ""
+            const std::vector<std::string>& input,
+            const std::string& glue = ""
         );
 
         /**
@@ -149,7 +151,7 @@ namespace net_ln3::cpp_lib {
              * @since v0.1.0-alpha
              * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
              */
-            [[maybe_unused]] static bool isValidSigned(const std::string &str_);
+            [[maybe_unused]] static bool isValidSigned(const std::string& str_);
 
             /**
              * @brief 入力がunsigned long long型に変換可能かを判定します。
@@ -158,7 +160,7 @@ namespace net_ln3::cpp_lib {
              * @since v0.1.0-alpha
              * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
              */
-            [[maybe_unused]] static bool isValidUnsigned(const std::string &str_);
+            [[maybe_unused]] static bool isValidUnsigned(const std::string& str_);
 
             /**
              * @brief 入力が`long double`型に変換可能かを判定します。
@@ -167,7 +169,7 @@ namespace net_ln3::cpp_lib {
              * @since v0.1.0-alpha
              * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
              */
-            [[maybe_unused]] static bool isValidLongDouble(const std::string &str_);
+            [[maybe_unused]] static bool isValidLongDouble(const std::string& str_);
 
             /**
              * @brief 入力が`double`型に変換可能かを判定します。
@@ -176,7 +178,7 @@ namespace net_ln3::cpp_lib {
              * @since v0.1.0-alpha
              * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
              */
-            [[maybe_unused]] static bool isValidDouble(const std::string &str_);
+            [[maybe_unused]] static bool isValidDouble(const std::string& str_);
 
             /**
              * @brief 入力が真偽型を表現しているかを判定します。
@@ -185,17 +187,18 @@ namespace net_ln3::cpp_lib {
              * @since v0.1.0-alpha
              * @throws std::regex_error メモリが不足している場合に投げられます。詳細は`std::regex_match`のドキュメントを確認してください。
              */
-            [[maybe_unused]] static bool isValidBoolean(const std::string &str_);
+            [[maybe_unused]] static bool isValidBoolean(const std::string& str_);
 
         private:
-             /**
-              * @brief 判定器用のヘルパー関数
-              * @param str_ 判定対象の文字列
-              * @param _error_checker 変換不可の場合に例外を送出するか、それについての真偽型を返す関数。例外でエラーを示す場合は、return true;としてください。
-              * @return 判定結果
-              * @since v0.1.0-alpha
-              */
-            static bool _validateHelper(const std::string &str_, const std::function<bool(const std::string&)>& _error_checker) noexcept;
+            /**
+             * @brief 判定器用のヘルパー関数
+             * @param str_ 判定対象の文字列
+             * @param _error_checker 変換不可の場合に例外を送出するか、それについての真偽型を返す関数。例外でエラーを示す場合は、return true;としてください。
+             * @return 判定結果
+             * @since v0.1.0-alpha
+             */
+            static bool _validateHelper(const std::string& str_,
+                                        const std::function<bool(const std::string&)>& _error_checker) noexcept;
 
             const static std::regex _signedPattern;
             const static std::regex _unsignedPattern;

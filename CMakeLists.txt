@@ -29,6 +29,6 @@ enable_testing()
 add_executable(cpp-libs-test test/ParseUtil/unit_test_ParseUtil.cpp
         test/ArgumentParser/unit_test_ArgumentParser.cpp
         test/ArgumentParser/unit_test_OptionValue.cpp)
-target_link_libraries(cpp-libs-test  gtest_main cpp-libs)
+target_link_libraries(cpp-libs-test gtest_main cpp-libs)
 
 gtest_discover_tests(cpp-libs-test)

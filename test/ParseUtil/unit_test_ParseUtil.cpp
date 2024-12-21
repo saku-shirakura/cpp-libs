@@ -27,13 +27,9 @@ using namespace net_ln3::cpp_lib;
 
 // toStringのテスト
 
-TEST(ParseUtilToString, eq) {
-    ASSERT_EQ(ParseUtil::toString({'a', 'b', 'c', 'd', 'e', 'f', 'g'}), "abcdefg");
-}
+TEST(ParseUtilToString, eq) { ASSERT_EQ(ParseUtil::toString({'a', 'b', 'c', 'd', 'e', 'f', 'g'}), "abcdefg"); }
 
-TEST(ParseUtilToString, boundary) {
-    ASSERT_EQ(ParseUtil::toString({}), "");
-}
+TEST(ParseUtilToString, boundary) { ASSERT_EQ(ParseUtil::toString({}), ""); }
 
 // toArrayのテスト
 
@@ -42,9 +38,7 @@ TEST(ParseUtilToArray, eq) {
     ASSERT_EQ(ParseUtil::toArray("abcdefg"), valid);
 }
 
-TEST(ParseUtilToArray, boundary) {
-    ASSERT_EQ(ParseUtil::toArray(""), std::vector<char>());
-}
+TEST(ParseUtilToArray, boundary) { ASSERT_EQ(ParseUtil::toArray(""), std::vector<char>()); }
 
 // toString - toArrayの相互変換テスト
 
@@ -94,9 +88,7 @@ TEST(ParseUtilSlice, boundary1MinMax) {
     ASSERT_EQ(ParseUtil::slice("abcdefg", 0, 6), "abcdefg");
 }
 
-TEST(ParseUtilSlice, boundary1OverMax) {
-    ASSERT_THROW(ParseUtil::slice("abcdefg", 0, 7), ParseUtilOutOfRange);
-}
+TEST(ParseUtilSlice, boundary1OverMax) { ASSERT_THROW(ParseUtil::slice("abcdefg", 0, 7), ParseUtilOutOfRange); }
 
 TEST(ParseUtilSlice, boundary2Max) {
     ASSERT_NO_THROW(ParseUtil::slice("abcdefg", 6, 0));
@@ -108,9 +100,7 @@ TEST(ParseUtilSlice, boundary2Min) {
     ASSERT_EQ(ParseUtil::slice("abcdefg", 1, 0), "bcdefg");
 }
 
-TEST(ParseUtilSlice, boundary2OverMax) {
-    ASSERT_THROW(ParseUtil::slice("abcdefg", 7, 0), ParseUtilOutOfRange);
-}
+TEST(ParseUtilSlice, boundary2OverMax) { ASSERT_THROW(ParseUtil::slice("abcdefg", 7, 0), ParseUtilOutOfRange); }
 
 TEST(ParseUtilSlice, boundary3Max) {
     ASSERT_NO_THROW(ParseUtil::slice("abcdefg", 6, 6));
@@ -122,9 +112,7 @@ TEST(ParseUtilSlice, boundary3Min) {
     ASSERT_EQ(ParseUtil::slice("abcdefg", 0, 0), "a");
 }
 
-TEST(ParseUtilSlice, boundary3OverMax) {
-    ASSERT_THROW(ParseUtil::slice("abcdefg", 7, 7), ParseUtilOutOfRange);
-}
+TEST(ParseUtilSlice, boundary3OverMax) { ASSERT_THROW(ParseUtil::slice("abcdefg", 7, 7), ParseUtilOutOfRange); }
 
 // splitのテスト
 

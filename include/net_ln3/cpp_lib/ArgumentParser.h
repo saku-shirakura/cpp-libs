@@ -110,10 +110,8 @@ namespace net_ln3::cpp_lib {
              * @return 値を登録したOptionValueのインスタンス
              * @since v0.1.0-alpha
              */
-            template<class T>
-            static OptionValue createInstance(T value_) {
-                return OptionValue(VContainer(value_));
-            }
+            template <class T>
+            static OptionValue createInstance(T value_) { return OptionValue(VContainer(value_)); }
 
             /**
              * @brief クラスが格納している値を文字列として取得する。
@@ -124,7 +122,7 @@ namespace net_ln3::cpp_lib {
              * @return 格納している文字列
              * @since v0.1.0-alpha
              */
-            [[nodiscard]] std::string getString(const std::string &default_ = "") const;
+            [[nodiscard]] std::string getString(const std::string& default_ = "") const;
 
             /**
              * @brief クラスが格納している値を符号付き整数として取得する。
@@ -250,7 +248,7 @@ namespace net_ln3::cpp_lib {
 
                 explicit VContainer(std::nullptr_t v_);
 
-                explicit VContainer(const char *v_);
+                explicit VContainer(const char* v_);
 
                 explicit VContainer(std::string v_);
 
@@ -273,10 +271,8 @@ namespace net_ln3::cpp_lib {
                  * @tparam T 保有するか確認したい型
                  * @return Tと保有する値の型が等しいかどうかの真偽値
                  */
-                template<class T>
-                [[nodiscard]] bool checkType() const {
-                    return std::holds_alternative<T>(_value);
-                }
+                template <class T>
+                [[nodiscard]] bool checkType() const { return std::holds_alternative<T>(_value); }
 
                 /**
                  * @brief 保有する値を取得します。
@@ -284,8 +280,8 @@ namespace net_ln3::cpp_lib {
                  * @return 型がTの保有している値
                  * @exception std::invalid_argument 取得したい型と保有している値の型に互換性がありません。
                  */
-                template<class T>
-                [[nodiscard]] const T &getTypeValue() const {
+                template <class T>
+                [[nodiscard]] const T& getTypeValue() const {
                     if (checkType<T>())
                         return std::get<T>(_value);
                     throw std::invalid_argument("[" + std::string(__func__) + "] template type is incompatible.");
@@ -334,7 +330,7 @@ namespace net_ln3::cpp_lib {
              * @return オプション名に設定されている型
              * @since v0.1.0-alpha
              */
-            [[nodiscard]] OptionType getOptionType(const std::string &option_name_) const;
+            [[nodiscard]] OptionType getOptionType(const std::string& option_name_) const;
 
             /**
              * @brief 対応するオプションが存在するかを確認します。
@@ -342,7 +338,7 @@ namespace net_ln3::cpp_lib {
              * @return オプション名が存在するかどうか
              * @since v0.1.0-alpha
              */
-            bool isExistOption(const std::string &option_name_) const;
+            bool isExistOption(const std::string& option_name_) const;
 
             /**
              * @brief オプションを新しく登録する。
@@ -352,7 +348,7 @@ namespace net_ln3::cpp_lib {
              * @return 登録が成功したかどうか
              * @since v0.1.0-alpha
              */
-            bool addOption(const std::string &option_name_, OptionType type_);
+            bool addOption(const std::string& option_name_, OptionType type_);
 
             /**
              * @brief オプションを削除する。
@@ -361,7 +357,7 @@ namespace net_ln3::cpp_lib {
              * @return 削除が成功したかどうか
              * @since v0.1.0-alpha
              */
-            bool removeOption(const std::string &option_name_);
+            bool removeOption(const std::string& option_name_);
 
         private:
             std::unordered_map<std::string, OptionType> _name_type_table;
@@ -394,7 +390,7 @@ namespace net_ln3::cpp_lib {
              * @return エイリアスに設定されているオプション名
              * @since v0.1.0-alpha
              */
-            [[nodiscard]] std::string getOptionName(const std::string &alias_name_) const;
+            [[nodiscard]] std::string getOptionName(const std::string& alias_name_) const;
 
             /**
              * @brief 対応するエイリアスが存在するかを確認します。
@@ -402,7 +398,7 @@ namespace net_ln3::cpp_lib {
              * @return エイリアスが存在するかどうか
              * @since v0.1.0-alpha
              */
-            bool isExistAlias(const std::string &alias_name_) const;
+            bool isExistAlias(const std::string& alias_name_) const;
 
             /**
              * @brief エイリアスを新しく登録する。
@@ -412,7 +408,7 @@ namespace net_ln3::cpp_lib {
              * @return 登録が成功したかどうか
              * @since v0.1.0-alpha
              */
-            bool addAlias(const std::string &alias_name_, const std::string &option_name_);
+            bool addAlias(const std::string& alias_name_, const std::string& option_name_);
 
             /**
              * @brief エイリアスを削除する。
@@ -421,7 +417,7 @@ namespace net_ln3::cpp_lib {
              * @return 削除が成功したかどうか
              * @since v0.1.0-alpha
              */
-            bool removeAlias(const std::string &alias_name_);
+            bool removeAlias(const std::string& alias_name_);
 
         private:
             std::unordered_map<std::string, std::string> _name_alias_table;
@@ -456,7 +452,7 @@ namespace net_ln3::cpp_lib {
          * @overload
          * @since v0.0.1-alpha
          */
-        void parse(int argc_, char *argv_[]);
+        void parse(int argc_, char* argv_[]);
 
         /**
          * @brief 引数の配列をパースします。
@@ -469,7 +465,7 @@ namespace net_ln3::cpp_lib {
          * @since v0.0.1-alpha
          * @version v0.1.0-alpha パースできるオプションの形式を変更しました。(`key=val -> --key val`)
          */
-        void parse(const std::vector<std::string> &args_);
+        void parse(const std::vector<std::string>& args_);
 
         /**
          * @brief 引数のリストを取得します。
@@ -477,7 +473,7 @@ namespace net_ln3::cpp_lib {
          * @details オプションは別の関数で取得できます。詳しくは、getOptionを参照してください。
          * @since v0.1.0-alpha
          * */
-        const std::vector<std::string> &getArgs() const;
+        const std::vector<std::string>& getArgs() const;
 
         /**
          * @brief 引数を取得します。
@@ -496,8 +492,8 @@ namespace net_ln3::cpp_lib {
          * @details 存在しないオプション名を指定した場合、default_を返します。
          * @since v0.1.0-alpha
          */
-        OptionValue getOption(const std::string &option_name_,
-                              const OptionValue &default_ = OptionValue()) const;
+        OptionValue getOption(const std::string& option_name_,
+                              const OptionValue& default_ = OptionValue()) const;
 
         /**
          * @brief オプションが存在するか確認します。
@@ -505,21 +501,21 @@ namespace net_ln3::cpp_lib {
          * @return bool オプションが存在したかの結果
          * @since v0.1.0-alpha
          */
-        bool isExistOption(const std::string &key_) const;
+        bool isExistOption(const std::string& key_) const;
 
         /**
          * @brief マッピングできなかったオプションを取得します。
          * @return マッピングできなかったオプションのオプション名をキーとしたマップ
          * @since v0.1.0-alpha
          */
-        const std::unordered_map<std::string, std::vector<std::string> > &getInvalidOptions() const;
+        const std::unordered_map<std::string, std::vector<std::string>>& getInvalidOptions() const;
 
         /**
          * @brief オプション名は存在するが、値が指定の型に変更不可能である不正なオプションを取得します。
          * @return オプション名をキーとした、値と正常な型のマップ
          * @since v0.1.0-alpha
          */
-        const std::unordered_map<std::string, std::vector<std::pair<std::string, OptionType> > > &
+        const std::unordered_map<std::string, std::vector<std::pair<std::string, OptionType>>>&
         getInvalidOptionTypes() const;
 
         /**
@@ -527,7 +523,7 @@ namespace net_ln3::cpp_lib {
          * @return 紐づけられていなかったエイリアス名をキーとした、値とのマップ
          * @since v0.1.0-alpha
          */
-        const std::unordered_map<std::string, std::vector<std::string> > &getInvalidAlias() const;
+        const std::unordered_map<std::string, std::vector<std::string>>& getInvalidAlias() const;
 
     private:
         /**
@@ -536,7 +532,7 @@ namespace net_ln3::cpp_lib {
          * @return 変換後の文字列
          * @since v0.1.0-alpha
          */
-        static std::string _getOptionName(const std::string &option_arg_);
+        static std::string _getOptionName(const std::string& option_arg_);
 
         /**
          * @brief 引数から取得できる生のエイリアスを接頭辞をとったエイリアスに変換します。
@@ -544,7 +540,7 @@ namespace net_ln3::cpp_lib {
          * @return 変換後の文字列
          * @since v0.1.0-alpha
          */
-        static std::string _getAliasName(const std::string &alias_arg_);
+        static std::string _getAliasName(const std::string& alias_arg_);
 
         /**
          * @brief 引数がオプション名を表しているかを判定します。
@@ -552,7 +548,7 @@ namespace net_ln3::cpp_lib {
          * @return 判定結果
          * @since v0.1.0-alpha
          */
-        static bool _isOptionName(const std::string &option_arg_);
+        static bool _isOptionName(const std::string& option_arg_);
 
         /**
          * @brief 引数がエイリアスを表しているかを判定します。
@@ -560,7 +556,7 @@ namespace net_ln3::cpp_lib {
          * @return 判定結果
          * @since v0.1.0-alpha
          */
-        static bool _isAliasName(const std::string &alias_arg_);
+        static bool _isAliasName(const std::string& alias_arg_);
 
         /**
          * @brief オプションを登録します。
@@ -568,14 +564,14 @@ namespace net_ln3::cpp_lib {
          * @param value_ オプションの値
          * @since v0.1.0-alpha
          */
-        void _addOption(const std::string &option_name_, OptionValue value_);
+        void _addOption(const std::string& option_name_, OptionValue value_);
 
         /**
          * @brief 引数を登録します。
          * @param value_ 引数の値
          * @since v0.1.0-alpha
          */
-        void _addArgument(const std::string &value_);
+        void _addArgument(const std::string& value_);
 
         /**
          * @brief 無効なオプションを登録します。
@@ -583,7 +579,7 @@ namespace net_ln3::cpp_lib {
          * @param value_ オプションの値
          * @since v0.1.0-alpha
          */
-        void _addInvalidOption(const std::string &option_name_, const std::string &value_);
+        void _addInvalidOption(const std::string& option_name_, const std::string& value_);
 
         /**
          * @brief 型が無効であったオプション名を登録します。
@@ -592,7 +588,7 @@ namespace net_ln3::cpp_lib {
          * @param type_ 期待されている型
          * @since v0.1.0-alpha
          */
-        void _addInvalidOptionType(const std::string &option_name_, const std::string &value_, OptionType type_);
+        void _addInvalidOptionType(const std::string& option_name_, const std::string& value_, OptionType type_);
 
         /**
          * @brief オプション名と紐づけがされていなかったエイリアスを登録します。
@@ -600,7 +596,7 @@ namespace net_ln3::cpp_lib {
          * @param value_ エイリアスに指定されていた値
          * @since v0.1.0-alpha
          */
-        void _addInvalidAlias(const std::string &alias_name_, const std::string &value_);
+        void _addInvalidAlias(const std::string& alias_name_, const std::string& value_);
 
         /**
          * @brief 文字列がOptionTypeに適合しているかを判定します。
@@ -609,7 +605,7 @@ namespace net_ln3::cpp_lib {
          * @return 判定結果
          * @since v0.1.0-alpha
          */
-        static bool _isValidType(const std::string &value_, OptionType type_);
+        static bool _isValidType(const std::string& value_, OptionType type_);
 
         /**
          * @brief 文字列をtype_に変換し、OptionValueにラップします。
@@ -618,19 +614,19 @@ namespace net_ln3::cpp_lib {
          * @return value_をOptionValueにラップした値。
          * @since v0.1.0-alpha
          */
-        static OptionValue _convertOptionValue(const std::string &value_, OptionType type_);
+        static OptionValue _convertOptionValue(const std::string& value_, OptionType type_);
 
         /// オプション以外の引数を保持します。順番を変更せずに格納されます。
         std::vector<std::string> _args;
         /// オプションのデータ
         std::unordered_map<std::string, OptionValue> _options;
         /// 無効なオプションのデータ
-        std::unordered_map<std::string, std::vector<std::string> > _invalid_options;
+        std::unordered_map<std::string, std::vector<std::string>> _invalid_options;
         /// 型が無効なオプションのデータ
         std::unordered_map<std::string, std::vector<std::pair<std::string /* 対象のオプション値の文字列 */, OptionType
-            /* オプションが期待している型 */> > > _invalid_option_types;
+                                                              /* オプションが期待している型 */>>> _invalid_option_types;
         /// 無効なエイリアスのデータ
-        std::unordered_map<std::string, std::vector<std::string> > _invalid_alias;
+        std::unordered_map<std::string, std::vector<std::string>> _invalid_alias;
         /// 有効なオプション名とその型
         OptionNames _valid_option_names;
         /// 有効なオプションエイリアス
