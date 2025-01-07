@@ -3,7 +3,8 @@ project(cpp-libs)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(cpp-libs STATIC src/ArgumentParser.cpp src/ParseUtil.cpp)
+add_library(cpp-libs STATIC src/ArgumentParser.cpp src/ParseUtil.cpp
+        src/PrintHelper.cpp)
 
 target_include_directories(cpp-libs PUBLIC include)
 
@@ -28,7 +29,8 @@ enable_testing()
 
 add_executable(cpp-libs-test test/ParseUtil/unit_test_ParseUtil.cpp
         test/ArgumentParser/unit_test_ArgumentParser.cpp
-        test/ArgumentParser/unit_test_OptionValue.cpp)
-target_link_libraries(cpp-libs-test  gtest_main cpp-libs)
+        test/ArgumentParser/unit_test_OptionValue.cpp
+        test/PrintHelper/unit_test_PrintHelper.cpp)
+target_link_libraries(cpp-libs-test gtest_main cpp-libs)
 
 gtest_discover_tests(cpp-libs-test)

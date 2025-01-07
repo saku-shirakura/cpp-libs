@@ -28,97 +28,97 @@
 using namespace net_ln3::cpp_lib;
 
 TEST(ArgumentParserParse, validNoMap) {
-    ArgumentParser parser;
-    const std::string command_line = "help this --value 4321 -v just-fit -v test --as--s test as--d";
-    parser.parse(ParseUtil::split(command_line));
-    ASSERT_EQ(parser.getOption("value").getString(), "4321");
-    ASSERT_EQ(parser.getOption("as--s").getString(), "test");
-    ASSERT_EQ(parser.getArgs(), std::vector<std::string>({"help", "this", "as--d"}));
-    const std::unordered_map<std::string, std::vector<std::string> > correctInvalidArgs(
-        {{"v", {"just-fit", "test"}}}
-    );
-    ASSERT_EQ(parser.getInvalidAlias(), correctInvalidArgs);
+        ArgumentParser parser;
+        const std::string command_line = "help this --value 4321 -v just-fit -v test --as--s test as--d";
+        parser.parse(ParseUtil::split(command_line));
+        ASSERT_EQ(parser.getOption("value").getString(), "4321");
+        ASSERT_EQ(parser.getOption("as--s").getString(), "test");
+        ASSERT_EQ(parser.getArgs(), std::vector<std::string>({"help", "this", "as--d"}));
+        const std::unordered_map<std::string, std::vector<std::string>> correctInvalidArgs(
+                {{"v", {"just-fit", "test"}}}
+        );
+        ASSERT_EQ(parser.getInvalidAlias(), correctInvalidArgs);
 }
 
 TEST(ArgumentParserParse, validMap) {
-    ArgumentParser parser(ArgumentParser::OptionNames(
-                              {
-                                  {"value", ArgumentParser::OptionType::UNSIGNED},
-                                  {"invalid", ArgumentParser::OptionType::UNSIGNED},
-                                  {"help", ArgumentParser::OptionType::BOOLEAN},
-                                  {"name", ArgumentParser::OptionType::STRING},
-                                  {"type", ArgumentParser::OptionType::SIGNED},
-                                  {"decimal", ArgumentParser::OptionType::LONG_DOUBLE}
-                              }), {});
-    const std::string command_line =
-            "help this --value 4321 --help --name test --invalid 0.03 --type -500 decimal --decimal 0.25 --name faster --post poster list -n faster";
-    parser.parse(ParseUtil::split(command_line));
-    ASSERT_EQ(parser.getOption("value").getUnsigned(), 4321);
-    ASSERT_TRUE(parser.getOption("help").getBoolean());
-    ASSERT_EQ(parser.getOption("name").getString(), "test");
-    ASSERT_EQ(parser.getOption("type").getSigned(), -500);
-    ASSERT_EQ(parser.getOption("decimal").getLongDouble(), 0.25);
-    ASSERT_EQ(parser.getArgs(), std::vector<std::string>({"help", "this", "decimal", "list"}));
-    const std::unordered_map<std::string, std::vector<std::string> > correctInvalidArgs(
-        {
-            {"name", {"faster"}},
-            {"post", {"poster"}}
-        }
-    );
-    ASSERT_EQ(parser.getInvalidOptions(), correctInvalidArgs);
-    const std::unordered_map<std::string, std::vector<std::pair<std::string, ArgumentParser::OptionType> > >
-            correctInvalidTypeArgs(
+        ArgumentParser parser(ArgumentParser::OptionNames(
+                                      {
+                                              {"value", ArgumentParser::OptionType::UNSIGNED},
+                                              {"invalid", ArgumentParser::OptionType::UNSIGNED},
+                                              {"help", ArgumentParser::OptionType::BOOLEAN},
+                                              {"name", ArgumentParser::OptionType::STRING},
+                                              {"type", ArgumentParser::OptionType::SIGNED},
+                                              {"decimal", ArgumentParser::OptionType::LONG_DOUBLE}
+                                      }), {});
+        const std::string command_line =
+                "help this --value 4321 --help --name test --invalid 0.03 --type -500 decimal --decimal 0.25 --name faster --post poster list -n faster";
+        parser.parse(ParseUtil::split(command_line));
+        ASSERT_EQ(parser.getOption("value").getUnsigned(), 4321);
+        ASSERT_TRUE(parser.getOption("help").getBoolean());
+        ASSERT_EQ(parser.getOption("name").getString(), "test");
+        ASSERT_EQ(parser.getOption("type").getSigned(), -500);
+        ASSERT_EQ(parser.getOption("decimal").getLongDouble(), 0.25);
+        ASSERT_EQ(parser.getArgs(), std::vector<std::string>({"help", "this", "decimal", "list"}));
+        const std::unordered_map<std::string, std::vector<std::string>> correctInvalidArgs(
                 {
-                    {"invalid", {{"0.03", ArgumentParser::OptionType::UNSIGNED}}}
+                        {"name", {"faster"}},
+                        {"post", {"poster"}}
                 }
-            );
-    ASSERT_EQ(parser.getInvalidOptionTypes(), correctInvalidTypeArgs);
-    const std::unordered_map<std::string, std::vector<std::string> > correctInvalidAliasArgs(
-        {
-            {"n", {"faster"}}
-        }
-    );
-    ASSERT_EQ(parser.getInvalidAlias(), correctInvalidAliasArgs);
+        );
+        ASSERT_EQ(parser.getInvalidOptions(), correctInvalidArgs);
+        const std::unordered_map<std::string, std::vector<std::pair<std::string, ArgumentParser::OptionType>>>
+                correctInvalidTypeArgs(
+                        {
+                                {"invalid", {{"0.03", ArgumentParser::OptionType::UNSIGNED}}}
+                        }
+                );
+        ASSERT_EQ(parser.getInvalidOptionTypes(), correctInvalidTypeArgs);
+        const std::unordered_map<std::string, std::vector<std::string>> correctInvalidAliasArgs(
+                {
+                        {"n", {"faster"}}
+                }
+        );
+        ASSERT_EQ(parser.getInvalidAlias(), correctInvalidAliasArgs);
 }
 
 TEST(ArgumentParserParse, validMapAlias) {
-    ArgumentParser parser(ArgumentParser::OptionNames(
-                              {
-                                  {"value", ArgumentParser::OptionType::UNSIGNED},
-                                  {"invalid", ArgumentParser::OptionType::UNSIGNED},
-                                  {"help", ArgumentParser::OptionType::BOOLEAN},
-                                  {"name", ArgumentParser::OptionType::STRING},
-                                  {"type", ArgumentParser::OptionType::SIGNED},
-                                  {"decimal", ArgumentParser::OptionType::LONG_DOUBLE}
-                              }),
+        ArgumentParser parser(ArgumentParser::OptionNames(
+                                      {
+                                              {"value", ArgumentParser::OptionType::UNSIGNED},
+                                              {"invalid", ArgumentParser::OptionType::UNSIGNED},
+                                              {"help", ArgumentParser::OptionType::BOOLEAN},
+                                              {"name", ArgumentParser::OptionType::STRING},
+                                              {"type", ArgumentParser::OptionType::SIGNED},
+                                              {"decimal", ArgumentParser::OptionType::LONG_DOUBLE}
+                                      }),
                               ArgumentParser::OptionAlias({{"?", "help"}, {"t", "type"}}));
-    const std::string command_line =
-            "help this --value 4321 -? --name test --invalid 0.03 -t -500 decimal --decimal 0.25 --name faster --post poster list -n faster";
-    parser.parse(ParseUtil::split(command_line));
-    ASSERT_EQ(parser.getOption("value").getUnsigned(), 4321);
-    ASSERT_TRUE(parser.getOption("help").getBoolean());
-    ASSERT_EQ(parser.getOption("name").getString(), "test");
-    ASSERT_EQ(parser.getOption("type").getSigned(), -500);
-    ASSERT_EQ(parser.getOption("decimal").getLongDouble(), 0.25);
-    ASSERT_EQ(parser.getArgs(), std::vector<std::string>({"help", "this", "decimal", "list"}));
-    const std::unordered_map<std::string, std::vector<std::string> > correctInvalidArgs(
-        {
-            {"name", {"faster"}},
-            {"post", {"poster"}}
-        }
-    );
-    ASSERT_EQ(parser.getInvalidOptions(), correctInvalidArgs);
-    const std::unordered_map<std::string, std::vector<std::pair<std::string, ArgumentParser::OptionType> > >
-            correctInvalidTypeArgs(
+        const std::string command_line =
+                "help this --value 4321 -? --name test --invalid 0.03 -t -500 decimal --decimal 0.25 --name faster --post poster list -n faster";
+        parser.parse(ParseUtil::split(command_line));
+        ASSERT_EQ(parser.getOption("value").getUnsigned(), 4321);
+        ASSERT_TRUE(parser.getOption("help").getBoolean());
+        ASSERT_EQ(parser.getOption("name").getString(), "test");
+        ASSERT_EQ(parser.getOption("type").getSigned(), -500);
+        ASSERT_EQ(parser.getOption("decimal").getLongDouble(), 0.25);
+        ASSERT_EQ(parser.getArgs(), std::vector<std::string>({"help", "this", "decimal", "list"}));
+        const std::unordered_map<std::string, std::vector<std::string>> correctInvalidArgs(
                 {
-                    {"invalid", {{"0.03", ArgumentParser::OptionType::UNSIGNED}}}
+                        {"name", {"faster"}},
+                        {"post", {"poster"}}
                 }
-            );
-    ASSERT_EQ(parser.getInvalidOptionTypes(), correctInvalidTypeArgs);
-    const std::unordered_map<std::string, std::vector<std::string> > correctInvalidAliasArgs(
-        {
-            {"n", {"faster"}}
-        }
-    );
-    ASSERT_EQ(parser.getInvalidAlias(), correctInvalidAliasArgs);
+        );
+        ASSERT_EQ(parser.getInvalidOptions(), correctInvalidArgs);
+        const std::unordered_map<std::string, std::vector<std::pair<std::string, ArgumentParser::OptionType>>>
+                correctInvalidTypeArgs(
+                        {
+                                {"invalid", {{"0.03", ArgumentParser::OptionType::UNSIGNED}}}
+                        }
+                );
+        ASSERT_EQ(parser.getInvalidOptionTypes(), correctInvalidTypeArgs);
+        const std::unordered_map<std::string, std::vector<std::string>> correctInvalidAliasArgs(
+                {
+                        {"n", {"faster"}}
+                }
+        );
+        ASSERT_EQ(parser.getInvalidAlias(), correctInvalidAliasArgs);
 }
