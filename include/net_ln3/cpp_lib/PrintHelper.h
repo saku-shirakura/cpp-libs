@@ -34,6 +34,10 @@
 #include <string>
 
 namespace net_ln3::cpp_lib {
+    /**
+     * @brief CUI表示補助用の雑多な関数群
+     * @since v0.1.2-alpha
+     * */
     class PrintHelper {
     public:
         /**
@@ -46,6 +50,7 @@ namespace net_ln3::cpp_lib {
          * @param blue_ 青(最大は255で、それを超える場合、255に補正されます。)
          * @return 色をANSI Escape Codeを付与し、Truecolorでの色を指定した文字列
          * @note Truecolorが使用できない場合は、正しく表示されない場合があります。
+         * @since v0.1.2-alpha
          */
         static std::string Color(const std::string& input_, unsigned short red_, unsigned short green_, unsigned short blue_);
 
@@ -58,6 +63,7 @@ namespace net_ln3::cpp_lib {
          * @returns 色をANSI Escape Codeを付与し、Truecolorでの色を指定した文字列
          * @returns 本質的には、rgb_color_をr, g, bに分割し、Color(input_, r, g, b)を返す関数です。
          * @note Truecolorが使用できない場合は、正しく表示されない場合があります。
+         * @since v0.1.2-alpha
          */
         static std::string Color(const std::string& input_, unsigned rgb_color_);
 
@@ -90,6 +96,7 @@ namespace net_ln3::cpp_lib {
          * @returns `return Color(input_, converted);`
          * @returns 正しく指定されていない場合は、"[PrintHelper::Color] error: 色コードが不正です。({input_}, {color_})"と返します。
          * @note Truecolorが使用できない場合は、正しく表示されない場合があります。
+         * @since v0.1.2-alpha
          */
         static std::string Color(const std::string& input_, std::string color_);
     };
