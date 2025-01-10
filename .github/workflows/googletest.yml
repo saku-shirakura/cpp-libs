@@ -5,9 +5,14 @@
 name: test
 
 on:
+  # ロジックやコードの変更がある場合
   pull_request:
     branches:
       - main
+    paths:
+      - '**.cpp'
+      - '**.h'
+      - 'CMakeLists.txt'
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)

@@ -112,12 +112,14 @@ WARN_AS_ERROR          = NO
 WARN_FORMAT            = "$file:$line: $text"
 WARN_LINE_FORMAT       = "at line $line of file $file"
 WARN_LOGFILE           =
-INPUT                  = README.md ./include
+INPUT                  = README.MD ./include
 INPUT_ENCODING         = UTF-8
 INPUT_FILE_ENCODING    =
 FILE_PATTERNS          = *.c \
                          *.cpp \
-                         *.h
+                         *.h \
+                         *.md \
+                         *.MD
 RECURSIVE              = YES
 EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO
