@@ -3,12 +3,13 @@ var indexSectionsWithContent =
   0: "_abcegilnoprstuv",
   1: "aopsv",
   2: "n",
-  3: "aps",
+  3: "aprs",
   4: "_acgioprstv",
   5: "_",
   6: "su",
   7: "o",
-  8: "belnsu"
+  8: "belnsu",
+  9: "c"
 };
 
 var indexSectionNames =
@@ -21,7 +22,8 @@ var indexSectionNames =
   5: "variables",
   6: "typedefs",
   7: "enums",
-  8: "enumvalues"
+  8: "enumvalues",
+  9: "pages"
 };
 
 var indexSectionLabels =
@@ -34,6 +36,7 @@ var indexSectionLabels =
   5: "Variables",
   6: "Typedefs",
   7: "Enumerations",
-  8: "Enumerator"
+  8: "Enumerator",
+  9: "Pages"
 };
 
