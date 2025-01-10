@@ -21,10 +21,11 @@
 // SOFTWARE.
 
 /**
- * @file net_ln3/cpp_lib/shorthand.h
+ * @file shorthand.h
  * @date 24/12/06
  * @brief long longのような型の省略形を定義しています。
  * @author saku shirakura (saku@sakushira.com)
+ * @since v0.1.0-alpha
  */
 
 

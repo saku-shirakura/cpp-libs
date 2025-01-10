@@ -26,6 +26,7 @@
 * @brief コマンドライン引数をパースする
 * @details コマンドライン引数をもとに、名前付き引数と無名引数にパースします。
 * @author saku shirakura (saku@sakushira.com)
+* @since v0.0.1-alpha
 */
 
 #ifndef DEVELOPER_TOOL_COMMANDPARSER_H

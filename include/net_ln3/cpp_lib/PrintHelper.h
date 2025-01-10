@@ -21,11 +21,10 @@
 // SOFTWARE.
 
 /**
- * @file
+ * @file PrintHelper.h
  * @date 25/01/07
- * @brief ファイルの説明
- * @details ファイルの詳細
  * @author saku shirakura (saku@sakushira.com)
+ * @since v0.1.2-alpha
  */
 
 
