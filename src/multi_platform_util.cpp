@@ -108,7 +108,7 @@ void net_ln3::cpp_libs::multi_platform::CodePageGuard::_setCodePage() {}
 
 void net_ln3::cpp_libs::multi_platform::CodePageGuard::_restoreCodePage() const {}
 
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::enable() { return true; }
+bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::enable(const bool rerun) { return true; }
 
 bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::isEnabled() { return true; }
 
