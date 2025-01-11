@@ -1,8 +1,8 @@
 var searchData=
 [
   ['isboolean_0',['isBoolean',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#acb7422af8172c325d33253506e52cdad',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
-  ['isenabled_1',['isEnabled',['../classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#aa0183023616953bcb9375c795d3689a6',1,'net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence']]],
-  ['isexecuted_2',['isExecuted',['../classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#ad1430f8213d1b53c94d5761ef0cc98a3',1,'net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence']]],
+  ['isenabled_1',['isEnabled',['../classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a576a4fbbd2452fbf1f01ca1f5d87869c',1,'net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence']]],
+  ['isexecuted_2',['isExecuted',['../classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a7627d540ac042b855142f769b88a28ac',1,'net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence']]],
   ['isexistalias_3',['isExistAlias',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#af0189826a3b51343b4c58b8ad114e04a',1,'net_ln3::cpp_lib::ArgumentParser::OptionAlias']]],
   ['isexistoption_4',['isExistOption',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#ad8c4431b4beb0b044cc1a4362c39e4b8',1,'net_ln3::cpp_lib::ArgumentParser::OptionNames::isExistOption()'],['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a9376f14e9e90550559a42b7232af19be',1,'net_ln3::cpp_lib::ArgumentParser::isExistOption()']]],
   ['islongdouble_5',['isLongDouble',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#aa7a802f2cb93a0e53b72a2868bdd2edb',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],

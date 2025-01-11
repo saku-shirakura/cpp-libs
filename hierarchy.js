@@ -1,8 +1,8 @@
 var hierarchy =
 [
     [ "net_ln3::cpp_lib::ArgumentParser", "classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html", null ],
-    [ "net_ln3::cpp_libs::multi_platform::CodePageGuard", "classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1CodePageGuard.html", null ],
-    [ "net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence", "classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html", null ],
+    [ "net_ln3::cpp_lib::multi_platform::CodePageGuard", "classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1CodePageGuard.html", null ],
+    [ "net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence", "classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html", null ],
     [ "net_ln3::cpp_lib::ArgumentParser::OptionAlias", "classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html", null ],
     [ "net_ln3::cpp_lib::ArgumentParser::OptionNames", "classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html", null ],
     [ "net_ln3::cpp_lib::ArgumentParser::OptionValue", "classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html", null ],
