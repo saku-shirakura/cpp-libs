@@ -2,6 +2,9 @@
 
 [![test](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml/badge.svg?branch=develop&event=pull_request)](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml)
 
+> [!WARNING]
+> MSBUILDは現状対応していません。Windowsでコンパイルする場合、MinGWなどを使用してください。
+
 C++用の雑多なライブラリです。
 
 以下の内容を含んでいます。
