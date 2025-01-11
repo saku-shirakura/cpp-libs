@@ -25,6 +25,7 @@
 #include <algorithm>
 #include <format>
 #include <sstream>
+#include <net_ln3/cpp_lib/multi_platform_util.h>
 
 constexpr unsigned BLACK = 0x000000;
 constexpr unsigned RED = 0x800000;
@@ -48,6 +49,10 @@ std::string net_ln3::cpp_lib::PrintHelper::Color(
     unsigned short red_,
     unsigned short green_,
     unsigned short blue_) {
+    // ANSIエスケープシーケンスに対応していない場合はそのまま出力する。
+    if (!cpp_libs::multi_platform::EnableAnsiEscapeSequence::isEnabled()) {
+        return input_;
+    }
     if (red_ > 255) red_ = 255;
     if (green_ > 255) green_ = 255;
     if (blue_ > 255) blue_ = 255;
