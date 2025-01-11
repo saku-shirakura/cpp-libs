@@ -50,7 +50,7 @@ std::string net_ln3::cpp_lib::PrintHelper::Color(
     unsigned short green_,
     unsigned short blue_) {
     // ANSIエスケープシーケンスに対応していない場合はそのまま出力する。
-    if (!cpp_libs::multi_platform::EnableAnsiEscapeSequence::isEnabled()) {
+    if (!multi_platform::EnableAnsiEscapeSequence::isEnabled()) {
         return input_;
     }
     if (red_ > 255) red_ = 255;
