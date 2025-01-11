@@ -6,17 +6,29 @@ C++用の雑多なライブラリです。
 
 以下の内容を含んでいます。
 
-1. ArgumentParser
+1. ArgumentParser [例](docs/examples/ArgumentParser.md)
 
    コマンドライン引数用のパーサーです。
 
-2. ParseUtil
+2. ParseUtil [例](docs/examples/ParseUtil.md)
 
    パーサの実装に使えるユーティリティです。
 
-3. PrintHelper
+3. PrintHelper [例](docs/examples/PrintHelper.md)
    
    シンプルなCUI用ユーティリティです。
+
+4. CodePageGuard [例](docs/examples/CodePageGuard.md)
+   
+   Windows環境で、コンソール出力にUTF-8を使用するためのクラスです。他の文字コードも設定できます。
+
+   linux環境などをターゲットにコンパイルすれば、クラスの関数やコンストラクタは全て空の関数が定義されます。
+
+5. EnableAnsiEscapeSequence [例](docs/examples/EnableAnsiEscapeSequence.md)
+
+   Windows環境で、コンソール出力にAnsiエスケープシーケンスを使用するためのユーティリティです。
+
+   `EnableAnsiEscapeSequence::enable()`で使用でき、`EnableAnsiEscapeSequence::isEnabled()`で有効か否かを確認できます。
 
 ## CMakeプロジェクトにこのライブラリを含める
 

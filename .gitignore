@@ -80,3 +80,4 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 doxy-build/
+doxygen_generated_docs/

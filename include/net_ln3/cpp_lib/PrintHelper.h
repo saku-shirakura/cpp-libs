@@ -21,11 +21,10 @@
 // SOFTWARE.
 
 /**
- * @file
+ * @file PrintHelper.h
  * @date 25/01/07
- * @brief ファイルの説明
- * @details ファイルの詳細
  * @author saku shirakura (saku@sakushira.com)
+ * @since v0.1.2-alpha
  */
 
 
@@ -36,6 +35,7 @@
 namespace net_ln3::cpp_lib {
     /**
      * @brief CUI表示補助用の雑多な関数群
+     * @details [詳細なコード例](docs/examples/PrintHelper.md)
      * @since v0.1.2-alpha
      * */
     class PrintHelper {
@@ -50,6 +50,9 @@ namespace net_ln3::cpp_lib {
          * @param blue_ 青(最大は255で、それを超える場合、255に補正されます。)
          * @return 色をANSI Escape Codeを付与し、Truecolorでの色を指定した文字列
          * @note Truecolorが使用できない場合は、正しく表示されない場合があります。
+         * @note また、コンソールがANSIエスケープシーケンスに対応していない場合も正しく表示されません。(色は付けられません)
+         * @note Windowsの場合は、`net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::enable()`によって初期化することで有効化できます。
+         * @note ただし、この方法についても"windows 10"未満のバージョンでは対応していないため色は付与されません。
          * @since v0.1.2-alpha
          */
         static std::string Color(const std::string& input_, unsigned short red_, unsigned short green_, unsigned short blue_);
@@ -63,6 +66,9 @@ namespace net_ln3::cpp_lib {
          * @returns 色をANSI Escape Codeを付与し、Truecolorでの色を指定した文字列
          * @returns 本質的には、rgb_color_をr, g, bに分割し、Color(input_, r, g, b)を返す関数です。
          * @note Truecolorが使用できない場合は、正しく表示されない場合があります。
+         * @note また、コンソールがANSIエスケープシーケンスに対応していない場合も正しく表示されません。(色は付けられません)
+         * @note Windowsの場合は、`net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::enable()`によって初期化することで有効化できます。
+         * @note ただし、この方法についても"windows 10"未満のバージョンでは対応していないため色は付与されません。
          * @since v0.1.2-alpha
          */
         static std::string Color(const std::string& input_, unsigned rgb_color_);
@@ -96,6 +102,9 @@ namespace net_ln3::cpp_lib {
          * @returns `return Color(input_, converted);`
          * @returns 正しく指定されていない場合は、"[PrintHelper::Color] error: 色コードが不正です。({input_}, {color_})"と返します。
          * @note Truecolorが使用できない場合は、正しく表示されない場合があります。
+         * @note また、コンソールがANSIエスケープシーケンスに対応していない場合も正しく表示されません。(色は付けられません)
+         * @note Windowsの場合は、`net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::enable()`によって初期化することで有効化できます。
+         * @note ただし、この方法についても"windows 10"未満のバージョンでは対応していないため色は付与されません。
          * @since v0.1.2-alpha
          */
         static std::string Color(const std::string& input_, std::string color_);

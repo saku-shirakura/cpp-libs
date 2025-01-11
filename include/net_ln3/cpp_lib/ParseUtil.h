@@ -53,6 +53,7 @@ namespace net_ln3::cpp_lib {
      * @brief パーサの実装に便利なユーティリティクラス
      * @details このクラスのメンバ関数はすべて静的関数です。
      * @details このクラスはインスタンス化できません。
+     * @details [詳細なコード例](docs/examples/ParseUtil.md)
      * @since v0.0.1-alpha
      * */
     class ParseUtil {

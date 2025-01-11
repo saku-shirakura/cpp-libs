@@ -3,8 +3,12 @@ project(cpp-libs)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(cpp-libs STATIC src/ArgumentParser.cpp src/ParseUtil.cpp
-        src/PrintHelper.cpp)
+add_library(cpp-libs STATIC
+        src/ArgumentParser.cpp
+        src/ParseUtil.cpp
+        src/PrintHelper.cpp
+        src/multi_platform_util.cpp
+)
 
 target_include_directories(cpp-libs PUBLIC include)
 
