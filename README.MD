@@ -18,6 +18,18 @@ C++用の雑多なライブラリです。
    
    シンプルなCUI用ユーティリティです。
 
+4. CodePageGuard
+   
+   Windows環境で、コンソール出力にUTF-8を使用するためのクラスです。他の文字コードも設定できます。
+
+   linux環境などをターゲットにコンパイルすれば、クラスの関数やコンストラクタは全て空の関数が定義されます。
+
+5. EnableAnsiEscapeSequence
+
+   Windows環境で、コンソール出力にAnsiエスケープシーケンスを使用するためのユーティリティです。
+
+   `EnableAnsiEscapeSequence::enable()`で使用でき、`EnableAnsiEscapeSequence::isEnabled()`で有効か否かを確認できます。
+
 ## CMakeプロジェクトにこのライブラリを含める
 
 ```cmake

@@ -41,7 +41,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: docs/html
+          folder: doxygen_generated_docs/html
           config_file: Doxyfile
           doxygen_version: 1.9.6
 # END COPY
