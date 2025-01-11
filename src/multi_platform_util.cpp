@@ -25,16 +25,16 @@
 #ifdef _WIN32
 #include <windows.h>
 
-net_ln3::cpp_libs::multi_platform::CodePageGuard::CodePageGuard(): CodePageGuard(CP_UTF8) {
+net_ln3::cpp_lib::multi_platform::CodePageGuard::CodePageGuard(): CodePageGuard(CP_UTF8) {
 }
 
-net_ln3::cpp_libs::multi_platform::CodePageGuard::CodePageGuard(const unsigned target_): _target_code_page(target_) {
+net_ln3::cpp_lib::multi_platform::CodePageGuard::CodePageGuard(const unsigned target_): _target_code_page(target_) {
     _setCodePage();
 }
 
-net_ln3::cpp_libs::multi_platform::CodePageGuard::~CodePageGuard() { _restoreCodePage(); }
+net_ln3::cpp_lib::multi_platform::CodePageGuard::~CodePageGuard() { _restoreCodePage(); }
 
-void net_ln3::cpp_libs::multi_platform::CodePageGuard::_setCodePage() {
+void net_ln3::cpp_lib::multi_platform::CodePageGuard::_setCodePage() {
     _before_code_page = GetConsoleOutputCP();
     if (_before_code_page == 0) {
         // 警告: コードページを正常に取得できませんでした。
@@ -50,7 +50,7 @@ void net_ln3::cpp_libs::multi_platform::CodePageGuard::_setCodePage() {
     }
 }
 
-void net_ln3::cpp_libs::multi_platform::CodePageGuard::_restoreCodePage() const {
+void net_ln3::cpp_lib::multi_platform::CodePageGuard::_restoreCodePage() const {
     if (_before_code_page == 0 || _target_code_page == _before_code_page) { return; }
     if (SetConsoleOutputCP(_before_code_page) == 0) {
         // 警告: コードページを正常に変更できませんでした。
@@ -59,7 +59,7 @@ void net_ln3::cpp_libs::multi_platform::CodePageGuard::_restoreCodePage() const 
     }
 }
 
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::enable(const bool rerun) {
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::enable(const bool rerun) {
     // すでに実行済みであればスキップする。また、rerunフラグが有効であれば再度実行する。
     if (_is_executed && !rerun) { return isEnabled(); }
     _is_executed = true;
@@ -76,7 +76,7 @@ bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::enable(const b
     return _enabled;
 }
 
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::isEnabled() {
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::isEnabled() {
     if (_is_executed) { return _enabled; }
     if (_enabled) { return true; }
     // エスケープシーケンスが有効であるかチェックする。
@@ -84,9 +84,9 @@ bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::isEnabled() {
     return _enabled;
 }
 
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::isExecuted() { return _is_executed; }
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::isExecuted() { return _is_executed; }
 
-unsigned long net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::_getConsoleMode() {
+unsigned long net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::_getConsoleMode() {
     // ReSharper disable once CppLocalVariableMayBeConst
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
     DWORD mode = 0;
@@ -98,26 +98,26 @@ unsigned long net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::_getC
 #else
 // DISABLE ALL FUNCTIONS
 
-net_ln3::cpp_libs::multi_platform::CodePageGuard::CodePageGuard() {}
+net_ln3::cpp_lib::multi_platform::CodePageGuard::CodePageGuard() {}
 
-net_ln3::cpp_libs::multi_platform::CodePageGuard::CodePageGuard(const unsigned target_) {}
+net_ln3::cpp_lib::multi_platform::CodePageGuard::CodePageGuard(const unsigned target_) {}
 
-net_ln3::cpp_libs::multi_platform::CodePageGuard::~CodePageGuard() {}
+net_ln3::cpp_lib::multi_platform::CodePageGuard::~CodePageGuard() {}
 
-void net_ln3::cpp_libs::multi_platform::CodePageGuard::_setCodePage() {}
+void net_ln3::cpp_lib::multi_platform::CodePageGuard::_setCodePage() {}
 
-void net_ln3::cpp_libs::multi_platform::CodePageGuard::_restoreCodePage() const {}
+void net_ln3::cpp_lib::multi_platform::CodePageGuard::_restoreCodePage() const {}
 
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::enable(const bool rerun) { return true; }
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::enable(const bool rerun) { return true; }
 
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::isEnabled() { return true; }
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::isEnabled() { return true; }
 
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::isExecuted() { return true; }
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::isExecuted() { return true; }
 
-unsigned long net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::_getConsoleMode() { return 0; }
+unsigned long net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::_getConsoleMode() { return 0; }
 
 #endif
 
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::_is_executed = false;
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::_enabled = false;
-bool net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence::_is_mode_obtained = false;
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::_is_executed = false;
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::_enabled = false;
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::_is_mode_obtained = false;

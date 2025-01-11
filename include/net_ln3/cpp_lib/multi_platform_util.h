@@ -35,7 +35,7 @@
  * @brief マルチプラットフォーム対応用のクラスや関数の名前空間
  * @since v0.1.3-alpha
  */
-namespace net_ln3::cpp_libs::multi_platform {
+namespace net_ln3::cpp_lib::multi_platform {
     /**
      * @brief このクラスのインスタンスをmain関数で作成することで、自動的にコードページを変更できます。
      * @details [詳細なコード例](docs/examples/CodePageGuard.md)
