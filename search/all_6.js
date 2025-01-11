@@ -1,16 +1,17 @@
 var searchData=
 [
-  ['isboolean_0',['isBoolean',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#acb7422af8172c325d33253506e52cdad',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
-  ['isexistalias_1',['isExistAlias',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#af0189826a3b51343b4c58b8ad114e04a',1,'net_ln3::cpp_lib::ArgumentParser::OptionAlias']]],
-  ['isexistoption_2',['isExistOption',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#ad8c4431b4beb0b044cc1a4362c39e4b8',1,'net_ln3::cpp_lib::ArgumentParser::OptionNames::isExistOption()'],['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a9376f14e9e90550559a42b7232af19be',1,'net_ln3::cpp_lib::ArgumentParser::isExistOption()']]],
-  ['islongdouble_3',['isLongDouble',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#aa7a802f2cb93a0e53b72a2868bdd2edb',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
-  ['isnull_4',['isNull',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#ac790c222e6abdaf0eb08a4eab0f18dbf',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
-  ['issigned_5',['isSigned',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a3a15fb3efd53c6b1a046bd5bec86d6de',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
-  ['isstring_6',['isString',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#aec081489b3aba7d15bf74397c3e215a3',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
-  ['isunsigned_7',['isUnsigned',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a3327c75309f439531395b6d49393536c',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
-  ['isvalidboolean_8',['isValidBoolean',['../classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#acaf245361b140a4d615c256e2d2417db',1,'net_ln3::cpp_lib::ParseUtil::StringValidator']]],
-  ['isvaliddouble_9',['isValidDouble',['../classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#aee14dc5c141b610274fd1d9da0344953',1,'net_ln3::cpp_lib::ParseUtil::StringValidator']]],
-  ['isvalidlongdouble_10',['isValidLongDouble',['../classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#ae82263dd96cf1a56e0b9b173a79310b3',1,'net_ln3::cpp_lib::ParseUtil::StringValidator']]],
-  ['isvalidsigned_11',['isValidSigned',['../classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#ad56e6a14e2e98296d8099675b90c71fa',1,'net_ln3::cpp_lib::ParseUtil::StringValidator']]],
-  ['isvalidunsigned_12',['isValidUnsigned',['../classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#a6319123cce5ce32109a9f4f933353eb8',1,'net_ln3::cpp_lib::ParseUtil::StringValidator']]]
+  ['getarg_0',['getArg',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a677a7ea071efb26dce7e3340ac1bfe9b',1,'net_ln3::cpp_lib::ArgumentParser']]],
+  ['getargs_1',['getArgs',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a40204bd32aa3a6ec5e7009e6a1cf490c',1,'net_ln3::cpp_lib::ArgumentParser']]],
+  ['getboolean_2',['getBoolean',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a520d353c7c701e57f1b9c09120e53d6d',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
+  ['getinvalidalias_3',['getInvalidAlias',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#acbd10f78843c5ee3f358c6b6ef9fdb3a',1,'net_ln3::cpp_lib::ArgumentParser']]],
+  ['getinvalidoptions_4',['getInvalidOptions',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a679a10cfe227b4793e74268da12593e1',1,'net_ln3::cpp_lib::ArgumentParser']]],
+  ['getinvalidoptiontypes_5',['getInvalidOptionTypes',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a2d589b72aa71d824bf67e98f701cfac3',1,'net_ln3::cpp_lib::ArgumentParser']]],
+  ['getlongdouble_6',['getLongDouble',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#aaf62f3a8024b61e699cfb78824050a3a',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
+  ['getoption_7',['getOption',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a670d4e88500897294a03d6772c758f4a',1,'net_ln3::cpp_lib::ArgumentParser']]],
+  ['getoptionname_8',['getOptionName',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#ad855c8cd14629ff9f90d4ed6cb1cfb9c',1,'net_ln3::cpp_lib::ArgumentParser::OptionAlias']]],
+  ['getoptiontype_9',['getOptionType',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#accc4f9adf01bd02d697dcb35595c812b',1,'net_ln3::cpp_lib::ArgumentParser::OptionNames']]],
+  ['getsigned_10',['getSigned',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a03a065b318fe0d62fc3c6bf12ed25f3e',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
+  ['getstring_11',['getString',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a089bc2db5cd7997af6968baea61c711b',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]],
+  ['gettypevalue_12',['getTypeValue',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue_1_1VContainer.html#a6cb6c827659db862106bb34a2041f893',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer']]],
+  ['getunsigned_13',['getUnsigned',['../classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a8908af05c88c24d04fda8055c971d77f',1,'net_ln3::cpp_lib::ArgumentParser::OptionValue']]]
 ];

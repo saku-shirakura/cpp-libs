@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions_vars.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,14 +92,18 @@ $(function() {
 &#160;<ul>
 <li>_alias_name_pattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#ae7362057fb2c02ec576909fdd8f507f6">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_args&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a1393dd6b4e2d8d0e4093ee2fa2cef499">net_ln3::cpp_lib::ArgumentParser</a></li>
+<li>_before_code_page&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1CodePageGuard.html#a44a6676d37410d97d2671102ebdaa758">net_ln3::cpp_libs::multi_platform::CodePageGuard</a></li>
 <li>_booleanPattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#af763fe5c1ce9f00fb605c37f66618cfa">net_ln3::cpp_lib::ParseUtil::StringValidator</a></li>
 <li>_container&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#a1562d252cea0a680209988e7ce850bfb">net_ln3::cpp_lib::ArgumentParser::OptionValue</a></li>
 <li>_doublePattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#a211489afe30e5bc2d8c5421978c561b5">net_ln3::cpp_lib::ParseUtil::StringValidator</a></li>
+<li>_enabled&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a359a7677afb9ab651c0e6e56595423fb">net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence</a></li>
 <li>_extract_alias_name_pattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#abdc190788ba65990f501a049ba14e938">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_extract_option_name_pattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a76962f040f38abb63be343c280c0dba3">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_invalid_alias&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a2cb8088a1e80ce0e3f71a80204e2a047">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_invalid_option_types&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#af1d8003964e5cdf2692b3a6f2560326c">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_invalid_options&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a8b806c7f0ee9e30fa1577a256bae3be3">net_ln3::cpp_lib::ArgumentParser</a></li>
+<li>_is_executed&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#aff8fbdbeaa9cf4a24b752289855cb98e">net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence</a></li>
+<li>_is_mode_obtained&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a39e817edf42770e706ac8f1368a1ac23">net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence</a></li>
 <li>_longDoublePattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#a579924dd11480c30dbdfe8b509fdb423">net_ln3::cpp_lib::ParseUtil::StringValidator</a></li>
 <li>_name_alias_table&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#add0c18321e837b71901d9ac70e8a9329">net_ln3::cpp_lib::ArgumentParser::OptionAlias</a></li>
 <li>_name_type_table&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#a7aebfd388c0a19c5b56ab4487b2e3a07">net_ln3::cpp_lib::ArgumentParser::OptionNames</a></li>
@@ -87,15 +111,19 @@ $(function() {
 <li>_option_name_pattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a21767a250803b292d130c08ae248d630">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_options&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a44b01fda2cc1cb4d0e07bbaf27d9bf4f">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_signedPattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#a3e9bc09ede6abeaf91839fa9b10f0a8e">net_ln3::cpp_lib::ParseUtil::StringValidator</a></li>
+<li>_target_code_page&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1CodePageGuard.html#a774e44e760e979625db282f78462d786">net_ln3::cpp_libs::multi_platform::CodePageGuard</a></li>
 <li>_unsignedPattern&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#ae4866e460a2c36ae693bb486af564c49">net_ln3::cpp_lib::ParseUtil::StringValidator</a></li>
 <li>_valid_alias&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a040945b8b37aad85c155327851e23da0">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_valid_option_names&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#aa2ce141715753b5c82eb11c59974745d">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_value&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue_1_1VContainer.html#aa2ba967a300a4ef7ff9637de0eb940bf">net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>

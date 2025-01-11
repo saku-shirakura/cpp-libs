@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functions_func.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,10 +99,13 @@ $(function() {
 <li>_addOption()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#ad6f295dd5952561d5e83127840a1ff38">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_convertOptionValue()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#ac0cf9611fca00a34b1be83d0ab5407f5">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_getAliasName()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a19256d1e380e4aec889256467cf95772">net_ln3::cpp_lib::ArgumentParser</a></li>
+<li>_getConsoleMode()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a1d5d75f8202df04a20c8c5baccafab18">net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence</a></li>
 <li>_getOptionName()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a698ebf1267229312b95ccda6e24ef67c">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_isAliasName()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a514de7ab7c1701c07f6a3686182ffe25">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_isOptionName()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a7c90519e3d29f93d5dd51a6f072eec5e">net_ln3::cpp_lib::ArgumentParser</a></li>
 <li>_isValidType()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#ae7eac74ea35f5383113f411e69b6988b">net_ln3::cpp_lib::ArgumentParser</a></li>
+<li>_restoreCodePage()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1CodePageGuard.html#a3bc34c306ef8e5c5935376b25c74477f">net_ln3::cpp_libs::multi_platform::CodePageGuard</a></li>
+<li>_setCodePage()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1CodePageGuard.html#a6602d9c4c98b33e919c7f44d944de529">net_ln3::cpp_libs::multi_platform::CodePageGuard</a></li>
 <li>_validateHelper()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ParseUtil_1_1StringValidator.html#a50ef7b217bd13008552bb225a38cfc89">net_ln3::cpp_lib::ParseUtil::StringValidator</a></li>
 </ul>
 
@@ -97,8 +120,14 @@ $(function() {
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>checkType()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue_1_1VContainer.html#a4651885579f504036c4076f2474510d5">net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer</a></li>
+<li>CodePageGuard()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1CodePageGuard.html#a39ec8b4abe1f2ccf046112de41646a20">net_ln3::cpp_libs::multi_platform::CodePageGuard</a></li>
 <li>Color()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1PrintHelper.html#af2b632bf6b6137080172cd22bd4661cf">net_ln3::cpp_lib::PrintHelper</a></li>
 <li>createInstance()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#af9991c4047fcb4dee634c243b2899c3c">net_ln3::cpp_lib::ArgumentParser::OptionValue</a></li>
+</ul>
+
+
+<h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>enable()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#af38fc9b74c18f337b54165c80bd7bde5">net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence</a></li>
 </ul>
 
 
@@ -122,6 +151,8 @@ $(function() {
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>isBoolean()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#acb7422af8172c325d33253506e52cdad">net_ln3::cpp_lib::ArgumentParser::OptionValue</a></li>
+<li>isEnabled()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#aa0183023616953bcb9375c795d3689a6">net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence</a></li>
+<li>isExecuted()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#ad1430f8213d1b53c94d5761ef0cc98a3">net_ln3::cpp_libs::multi_platform::EnableAnsiEscapeSequence</a></li>
 <li>isExistAlias()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionAlias.html#af0189826a3b51343b4c58b8ad114e04a">net_ln3::cpp_lib::ArgumentParser::OptionAlias</a></li>
 <li>isExistOption()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser.html#a9376f14e9e90550559a42b7232af19be">net_ln3::cpp_lib::ArgumentParser</a>, <a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionNames.html#ad8c4431b4beb0b044cc1a4362c39e4b8">net_ln3::cpp_lib::ArgumentParser::OptionNames</a></li>
 <li>isLongDouble()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue.html#aa7a802f2cb93a0e53b72a2868bdd2edb">net_ln3::cpp_lib::ArgumentParser::OptionValue</a></li>
@@ -178,10 +209,18 @@ $(function() {
 <h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
 <li>VContainer()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__lib_1_1ArgumentParser_1_1OptionValue_1_1VContainer.html#a3ffd410c532c1e66e357380b5d1d893a">net_ln3::cpp_lib::ArgumentParser::OptionValue::VContainer</a></li>
 </ul>
+
+
+<h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~CodePageGuard()&#160;:&#160;<a class="el" href="classnet__ln3_1_1cpp__libs_1_1multi__platform_1_1CodePageGuard.html#a1fd51b768efb0cd18490da7a529c472b">net_ln3::cpp_libs::multi_platform::CodePageGuard</a></li>
+</ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>
