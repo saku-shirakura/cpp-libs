@@ -55,6 +55,8 @@ namespace net_ln3::cpp_lib {
      * - 引数: `[hello, helpers]`
      * - オプション: `[{name: "echo"}, {flag: true}, {command: "helloMode"}, {length: 100}]`
      *
+     * [詳細なコード例](docs/examples/ArgumentParser.md)
+     *
      * @since v0.0.1-alpha
      * @version v0.1.0-alpha オプションの型を指定できるようにしました。また、オプションの形式を変更しました。(key=val -> --key val)
      * */

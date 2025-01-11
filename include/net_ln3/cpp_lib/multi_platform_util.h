@@ -38,6 +38,7 @@
 namespace net_ln3::cpp_libs::multi_platform {
     /**
      * @brief このクラスのインスタンスをmain関数で作成することで、自動的にコードページを変更できます。
+     * @details [詳細なコード例](docs/examples/CodePageGuard.md)
      * @note 現状このクラスは、Windowsのコンソールへの対応用です。
      * @since v0.1.3-alpha
      */
@@ -90,6 +91,7 @@ namespace net_ln3::cpp_libs::multi_platform {
 
     /**
      * @brief ANSIエスケープシーケンスを有効にするためのクラス。
+     * @details [詳細なコード例](docs/examples/EnableAnsiEscapeSequence.md)
      * @note 現状このクラスはWindows環境において、コンソールでANSIエスケープを有効にするために使用されます。
      * @since v0.1.3-alpha
      */

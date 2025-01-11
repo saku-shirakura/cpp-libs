@@ -35,6 +35,7 @@
 namespace net_ln3::cpp_lib {
     /**
      * @brief CUI表示補助用の雑多な関数群
+     * @details [詳細なコード例](docs/examples/PrintHelper.md)
      * @since v0.1.2-alpha
      * */
     class PrintHelper {
