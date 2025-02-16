@@ -39,7 +39,7 @@ C++用の雑多なライブラリです。
 include(FetchContent)
 FetchContent_Declare(
         cpp-libs
-        GIT_REPOSITORY https://github.com/saku-shirakura/win-cbt-app.git
+        GIT_REPOSITORY https://github.com/saku-shirakura/cpp-libs.git
         GIT_TAG v0.1.2-alpha # 必要に応じてバージョンをあげること。
 )
 
