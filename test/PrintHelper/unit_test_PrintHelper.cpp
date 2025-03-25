@@ -22,6 +22,7 @@
 
 #include <net_ln3/cpp_lib/PrintHelper.h>
 #include <gtest/gtest.h>
+#include <net_ln3/cpp_lib/multi_platform_util.h>
 
 using namespace net_ln3::cpp_lib;
 
@@ -29,6 +30,16 @@ using namespace net_ln3::cpp_lib;
 
 TEST(PrintHelperColor, eq) {
     using ph = PrintHelper;
+#ifdef WIN32
+    // Windowsの場合、AnsiEscapeが無効であるケースを確認する。
+    if (!multi_platform::EnableAnsiEscapeSequence::isEnabled()) {
+        ASSERT_EQ(ph::Color("abc", "#9a1Fac"), "abc");
+        ASSERT_EQ(ph::Color("Jabc", 0x9a1Fac), "Jabc");
+        ASSERT_EQ(ph::Color("abc", 0xFFFFFFFF), "abc");
+        ASSERT_EQ(ph::Color("abc", 0xA2, 0x3F, 0x9D), "abc");
+        multi_platform::EnableAnsiEscapeSequence::enable(false, true); // 強制フラグを有効にし、強制的に許可する。
+    }
+#endif
     ASSERT_EQ(ph::Color("abc", "#9a1Fac"), "\033[38;2;154;31;172mabc\033[39m");
     ASSERT_EQ(ph::Color("Jabc", 0x9a1Fac), "\033[38;2;154;31;172mJabc\033[39m");
     ASSERT_EQ(ph::Color("abc", 0xFFFFFFFF), "\033[38;2;255;255;255mabc\033[39m");
