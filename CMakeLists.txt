@@ -10,6 +10,10 @@ add_library(cpp-libs STATIC
         src/multi_platform_util.cpp
 )
 
+if (${MSVC})
+    target_compile_options(cpp-libs PRIVATE "/utf-8")
+endif ()
+
 target_include_directories(cpp-libs PUBLIC include)
 
 ###
