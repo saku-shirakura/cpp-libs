@@ -30,6 +30,7 @@
 #ifndef NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
 #define NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
 
+#include <functional>
 #include <string>
 #include <utility>
 #include <vector>

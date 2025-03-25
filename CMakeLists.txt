@@ -10,10 +10,6 @@ add_library(cpp-libs STATIC
         src/multi_platform_util.cpp
 )
 
-if (${MSVC})
-    target_compile_options(cpp-libs PRIVATE "/utf-8")
-endif ()
-
 target_include_directories(cpp-libs PUBLIC include)
 
 ###
@@ -39,6 +35,14 @@ add_executable(cpp-libs-test test/ParseUtil/unit_test_ParseUtil.cpp
         test/ArgumentParser/unit_test_ArgumentParser.cpp
         test/ArgumentParser/unit_test_OptionValue.cpp
         test/PrintHelper/unit_test_PrintHelper.cpp)
+
+set_target_properties(cpp-libs-test PROPERTIES EXCLUDE_FROM_ALL TRUE)
+
 target_link_libraries(cpp-libs-test gtest_main cpp-libs)
 
 gtest_discover_tests(cpp-libs-test)
+
+if (${MSVC})
+    target_compile_options(cpp-libs PRIVATE "/utf-8")
+    target_compile_options(cpp-libs-test PRIVATE "/utf-8")
+endif ()
