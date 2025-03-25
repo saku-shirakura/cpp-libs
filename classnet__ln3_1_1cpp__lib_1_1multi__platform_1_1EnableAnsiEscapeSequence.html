@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('classnet__ln3_1_1cpp__lib_1_1multi__pl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6e8d50fcb869cca5514e0cd28c763e42"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a6e8d50fcb869cca5514e0cd28c763e42">enable</a> (bool rerun=false)</td></tr>
-<tr class="memdesc:a6e8d50fcb869cca5514e0cd28c763e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSIエスケープをコンソールで有効にする。  <br /></td></tr>
-<tr class="separator:a6e8d50fcb869cca5514e0cd28c763e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad316e65392fe0668f1f4627fc9983a71"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#ad316e65392fe0668f1f4627fc9983a71">enable</a> (bool rerun=false, bool force_enable=false)</td></tr>
+<tr class="memdesc:ad316e65392fe0668f1f4627fc9983a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSIエスケープをコンソールで有効にする。  <br /></td></tr>
+<tr class="separator:ad316e65392fe0668f1f4627fc9983a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a576a4fbbd2452fbf1f01ca1f5d87869c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a576a4fbbd2452fbf1f01ca1f5d87869c">isEnabled</a> ()</td></tr>
 <tr class="memdesc:a576a4fbbd2452fbf1f01ca1f5d87869c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSIエスケープが有効か否かを返します。  <br /></td></tr>
 <tr class="separator:a576a4fbbd2452fbf1f01ca1f5d87869c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7627d540ac042b855142f769b88a28ac"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a7627d540ac042b855142f769b88a28ac">isExecuted</a> ()</td></tr>
-<tr class="memdesc:a7627d540ac042b855142f769b88a28ac"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a6e8d50fcb869cca5514e0cd28c763e42" title="ANSIエスケープをコンソールで有効にする。">enable()</a>関数が一度でも実行されているかを確認します。  <br /></td></tr>
+<tr class="memdesc:a7627d540ac042b855142f769b88a28ac"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#ad316e65392fe0668f1f4627fc9983a71" title="ANSIエスケープをコンソールで有効にする。">enable()</a>関数が一度でも実行されているかを確認します。  <br /></td></tr>
 <tr class="separator:a7627d540ac042b855142f769b88a28ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
@@ -165,8 +165,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e8d50fcb869cca5514e0cd28c763e42" name="a6e8d50fcb869cca5514e0cd28c763e42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e8d50fcb869cca5514e0cd28c763e42">&#9670;&#160;</a></span>enable()</h2>
+<a id="ad316e65392fe0668f1f4627fc9983a71" name="ad316e65392fe0668f1f4627fc9983a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad316e65392fe0668f1f4627fc9983a71">&#9670;&#160;</a></span>enable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,8 +178,18 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">static bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::enable </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>rerun</em> = <code>false</code></td><td>)</td>
+          <td class="paramname"><em>rerun</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>force_enable</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -193,6 +203,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rerun</td><td>実行済みフラグに問わず、強制的に実行します。デフォルトは<code>false</code>です。 </td></tr>
+    <tr><td class="paramname">force_enable</td><td>デバッグ用引数。有効・無効のテストケースを検証するための引数です。この変数は使用する必要がありません。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -255,8 +266,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a6e8d50fcb869cca5514e0cd28c763e42" title="ANSIエスケープをコンソールで有効にする。">enable()</a>関数が一度でも実行されているかを確認します。 </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#a6e8d50fcb869cca5514e0cd28c763e42" title="ANSIエスケープをコンソールで有効にする。">enable()</a>関数が一度実行されているかどうか。 </dd></dl>
+<p><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#ad316e65392fe0668f1f4627fc9983a71" title="ANSIエスケープをコンソールで有効にする。">enable()</a>関数が一度でも実行されているかを確認します。 </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classnet__ln3_1_1cpp__lib_1_1multi__platform_1_1EnableAnsiEscapeSequence.html#ad316e65392fe0668f1f4627fc9983a71" title="ANSIエスケープをコンソールで有効にする。">enable()</a>関数が一度実行されているかどうか。 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Windows環境以外では常に<code>true</code>を返します。 </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>v0.1.3-alpha </dd></dl>
 
