@@ -2,9 +2,6 @@
 
 [![test](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml/badge.svg?branch=develop&event=pull_request)](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml)
 
-> [!WARNING]
-> MSBUILDは現状対応していません。Windowsでコンパイルする場合、MinGWなどを使用してください。
-
 C++用の雑多なライブラリです。
 
 以下の内容を含んでいます。
@@ -40,7 +37,7 @@ include(FetchContent)
 FetchContent_Declare(
         cpp-libs
         GIT_REPOSITORY https://github.com/saku-shirakura/cpp-libs.git
-        GIT_TAG v0.1.2-alpha # 必要に応じてバージョンをあげること。
+        GIT_TAG v0.1.3-alpha.2 # 必要に応じてバージョンをあげること。
 )
 
 FetchContent_MakeAvailable(cpp-libs)
