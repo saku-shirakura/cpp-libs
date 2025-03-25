@@ -59,10 +59,17 @@ void net_ln3::cpp_lib::multi_platform::CodePageGuard::_restoreCodePage() const {
     }
 }
 
-bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::enable(const bool rerun) {
+bool net_ln3::cpp_lib::multi_platform::EnableAnsiEscapeSequence::enable(const bool rerun, const bool force_enable) {
     // すでに実行済みであればスキップする。また、rerunフラグが有効であれば再度実行する。
     if (_is_executed && !rerun) { return isEnabled(); }
     _is_executed = true;
+    if (force_enable) {
+        std::cout <<
+            "[Warning] EnableAnsiEscapeSequence::enable(): force_enable flag is enabled. If release build then must be don't enabled."
+            << std::endl;
+        _enabled = true;
+        return true;
+    }
     if (isEnabled())
         return true;
     const DWORD mode = _getConsoleMode();
