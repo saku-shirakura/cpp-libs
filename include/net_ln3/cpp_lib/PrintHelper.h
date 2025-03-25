@@ -55,7 +55,8 @@ namespace net_ln3::cpp_lib {
          * @note ただし、この方法についても"windows 10"未満のバージョンでは対応していないため色は付与されません。
          * @since v0.1.2-alpha
          */
-        static std::string Color(const std::string& input_, unsigned short red_, unsigned short green_, unsigned short blue_);
+        static std::string Color(const std::string& input_, unsigned short red_, unsigned short green_,
+                                 unsigned short blue_);
 
         /**
          * @brief コンソール出力に色を付ける。

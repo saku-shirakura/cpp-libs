@@ -84,7 +84,7 @@ namespace net_ln3::cpp_lib {
     bool ParseUtil::StringValidator::isValidSigned(const std::string& str_) {
         if (!std::regex_match(str_, _signedPattern)) { return false; }
         return _validateHelper(str_, [](const std::string& s_) {
-            std::stoll(s_);
+            static_cast<void>(std::stoll(s_));
             return true;
         });
     }
@@ -92,7 +92,7 @@ namespace net_ln3::cpp_lib {
     bool ParseUtil::StringValidator::isValidUnsigned(const std::string& str_) {
         if (!std::regex_match(str_, _unsignedPattern)) { return false; }
         return _validateHelper(str_, [](const std::string& s_) {
-            std::stoull(s_);
+            static_cast<void>(std::stoull(s_));
             return true;
         });
     }
@@ -100,7 +100,7 @@ namespace net_ln3::cpp_lib {
     bool ParseUtil::StringValidator::isValidLongDouble(const std::string& str_) {
         if (!std::regex_match(str_, _longDoublePattern)) { return false; }
         return _validateHelper(str_, [](const std::string& s_) {
-            std::stold(s_);
+            static_cast<void>(std::stold(s_));
             return true;
         });
     }
@@ -108,7 +108,7 @@ namespace net_ln3::cpp_lib {
     bool ParseUtil::StringValidator::isValidDouble(const std::string& str_) {
         if (!std::regex_match(str_, _doublePattern)) { return false; }
         return _validateHelper(str_, [](const std::string& s_) {
-            std::stod(s_);
+            static_cast<void>(std::stod(s_));
             return true;
         });
     }

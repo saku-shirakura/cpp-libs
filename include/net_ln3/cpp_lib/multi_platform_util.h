@@ -100,11 +100,12 @@ namespace net_ln3::cpp_lib::multi_platform {
         /**
          * @brief ANSIエスケープをコンソールで有効にする。
          * @param rerun 実行済みフラグに問わず、強制的に実行します。デフォルトは`false`です。
+         * @param force_enable デバッグ用引数。有効・無効のテストケースを検証するための引数です。この変数は使用する必要がありません。
          * @return 変更後の有効・無効の状態。成功した場合は、`true`が帰ります。
          * @note Windows環境以外では常に`true`を返します。
          * @since v0.1.3-alpha
          */
-        static bool enable(bool rerun = false);
+        static bool enable(bool rerun = false, bool force_enable = false);
 
         /**
          * @brief ANSIエスケープが有効か否かを返します。
