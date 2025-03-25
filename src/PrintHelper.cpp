@@ -50,17 +50,14 @@ std::string net_ln3::cpp_lib::PrintHelper::Color(
     unsigned short green_,
     unsigned short blue_) {
     // ANSIエスケープシーケンスに対応していない場合はそのまま出力する。
-    if (!multi_platform::EnableAnsiEscapeSequence::isEnabled()) {
-        return input_;
-    }
+    if (!multi_platform::EnableAnsiEscapeSequence::isEnabled()) { return input_; }
     if (red_ > 255) red_ = 255;
     if (green_ > 255) green_ = 255;
     if (blue_ > 255) blue_ = 255;
     return std::format("\033[38;2;{};{};{}m{}\033[39m", red_, green_, blue_, input_);
 }
 
-std::string net_ln3::cpp_lib::PrintHelper::Color(const std::string& input_, unsigned rgb_color_)
-{
+std::string net_ln3::cpp_lib::PrintHelper::Color(const std::string& input_, unsigned rgb_color_) {
     if (rgb_color_ > 0xFFFFFF) { rgb_color_ = 0xFFFFFF; }
     const auto r = rgb_color_ >> 16;
     const auto g = (rgb_color_ & 0x00FF00) >> 8;
@@ -68,8 +65,7 @@ std::string net_ln3::cpp_lib::PrintHelper::Color(const std::string& input_, unsi
     return Color(input_, r, g, b);
 }
 
-std::string net_ln3::cpp_lib::PrintHelper::Color(const std::string& input_, std::string color_)
-{
+std::string net_ln3::cpp_lib::PrintHelper::Color(const std::string& input_, std::string color_) {
     unsigned result_color = 0;
     // 小文字を大文字に置き換える
     std::ranges::transform(color_, color_.begin(), toupper);
@@ -97,9 +93,8 @@ std::string net_ln3::cpp_lib::PrintHelper::Color(const std::string& input_, std:
             );
         }
         color_.erase(0, 1);
-        try {
-            result_color = std::stoi(color_, nullptr, 16);
-        }catch (std::exception&) {
+        try { result_color = std::stoi(color_, nullptr, 16); }
+        catch (std::exception&) {
             return std::format(
                 "[PrintHelper::Color] {}: 色コードが不正です。(\"{}\", {})",
                 Color("error", RED), input_, color_
@@ -108,4 +103,3 @@ std::string net_ln3::cpp_lib::PrintHelper::Color(const std::string& input_, std:
     }
     return Color(input_, result_color);
 }
-
