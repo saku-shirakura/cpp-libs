@@ -1,6 +1,6 @@
 # cpp-libs
 
-[![test](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml/badge.svg?branch=develop&event=pull_request)](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml)
+[![test](https://github.com/ln3-net/cpp-libs/actions/workflows/googletest.yml/badge.svg?branch=develop&event=pull_request)](https://github.com/saku-shirakura/cpp-libs/actions/workflows/googletest.yml)
 
 C++用の雑多なライブラリです。
 
@@ -36,8 +36,8 @@ C++用の雑多なライブラリです。
 include(FetchContent)
 FetchContent_Declare(
         cpp-libs
-        GIT_REPOSITORY https://github.com/saku-shirakura/cpp-libs.git
-        GIT_TAG v0.1.3-alpha.2 # 必要に応じてバージョンをあげること。
+        GIT_REPOSITORY https://github.com/ln3-net/cpp-libs.git
+        GIT_TAG v0.1.3-alpha.3 # 必要に応じてバージョンをあげること。
 )
 
 FetchContent_MakeAvailable(cpp-libs)
@@ -48,6 +48,6 @@ target_link_libraries(example cpp-libs)
 ```
 
 ## リンク
-- [リポジトリ](https://github.com/saku-shirakura/cpp-libs)
+- [リポジトリ](https://github.com/ln3-net/cpp-libs)
 
-- [ライセンス(MIT)](https://github.com/saku-shirakura/cpp-libs/blob/main/LICENSE)
+- [ライセンス(MIT)](https://github.com/ln3-net/cpp-libs/blob/main/LICENSE)
