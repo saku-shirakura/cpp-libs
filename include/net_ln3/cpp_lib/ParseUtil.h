@@ -27,8 +27,8 @@
  * @since v0.0.1-alpha
  */
 
-#ifndef NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
-#define NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
+#ifndef CPP_LIBS_PARSEUTIL_H
+#define CPP_LIBS_PARSEUTIL_H
 
 #include <functional>
 #include <string>
@@ -211,4 +211,4 @@ namespace net_ln3::cpp_lib {
     };
 }
 
-#endif //NAND2TETRIS_C_LANGUAGE_PARSEUTIL_H
+#endif //CPP_LIBS_PARSEUTIL_H

@@ -29,8 +29,8 @@
 * @since v0.0.1-alpha
 */
 
-#ifndef DEVELOPER_TOOL_COMMANDPARSER_H
-#define DEVELOPER_TOOL_COMMANDPARSER_H
+#ifndef CPP_LIBS_COMMANDPARSER_H
+#define CPP_LIBS_COMMANDPARSER_H
 
 #include <regex>
 #include <string>
@@ -644,4 +644,4 @@ namespace net_ln3::cpp_lib {
     };
 } // namespace net_ln3::cpp_lib
 
-#endif//DEVELOPER_TOOL_COMMANDPARSER_H
+#endif//CPP_LIBS_COMMANDPARSER_H
