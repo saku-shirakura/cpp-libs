@@ -28,8 +28,8 @@
  */
 
 
-#ifndef MULTI_PLATFORM_UTIL_H
-#define MULTI_PLATFORM_UTIL_H
+#ifndef CPP_LIBS_MULTI_PLATFORM_UTIL_H
+#define CPP_LIBS_MULTI_PLATFORM_UTIL_H
 
 /**
  * @brief マルチプラットフォーム対応用のクラスや関数の名前空間
@@ -140,4 +140,4 @@ namespace net_ln3::cpp_lib::multi_platform {
     };
 }
 
-#endif //MULTI_PLATFORM_UTIL_H
+#endif //CPP_LIBS_MULTI_PLATFORM_UTIL_H

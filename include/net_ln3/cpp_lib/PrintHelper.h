@@ -28,8 +28,8 @@
  */
 
 
-#ifndef PRINTHELPER_H
-#define PRINTHELPER_H
+#ifndef CPP_LIBS_PRINTHELPER_H
+#define CPP_LIBS_PRINTHELPER_H
 #include <string>
 
 namespace net_ln3::cpp_lib {
@@ -112,4 +112,4 @@ namespace net_ln3::cpp_lib {
     };
 }
 
-#endif //PRINTHELPER_H
+#endif //CPP_LIBS_PRINTHELPER_H
